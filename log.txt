@@ -1,3 +1,9 @@
+commit 89b7d9b9f244275328cf682833535af88ceeb1d4
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 13:54:17 2016 +0300
+
+    Add log.txt to copy Rep
+
 commit d4503ce0170248965658c76f0f81618cfddb7c02
 Author: Grach <egri4stk@gmail.com>
 Date:   Tue Feb 9 12:07:20 2016 +0300
