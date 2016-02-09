@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 commit 6a45050e465dbdaf0a1fe0155ea922947730cf35
 Author: Grach <egri4stk@gmail.com>
 Date:   Tue Feb 9 16:30:50 2016 +0300
@@ -35,6 +36,8 @@ Date:   Tue Feb 9 16:30:06 2016 +0300
 
     Change log
 
+=======
+>>>>>>> c0faa190b7479b46ae8dbb06097c0be5be8fb0ea
 commit d4503ce0170248965658c76f0f81618cfddb7c02
 Author: Grach <egri4stk@gmail.com>
 Date:   Tue Feb 9 12:07:20 2016 +0300

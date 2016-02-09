@@ -21,5 +21,9 @@ nothing added to commit but untracked files present (use "git add" to track)
 -------------------------------------
 On branch master
 Your branch is up-to-date with 'origin/master'.
+<<<<<<< HEAD
 nothing to commit, working directory clean
 -------------------------------------
+=======
+nothing to commit, working directory clean
+>>>>>>> c0faa190b7479b46ae8dbb06097c0be5be8fb0ea
