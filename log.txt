@@ -1,3 +1,40 @@
+commit 6a45050e465dbdaf0a1fe0155ea922947730cf35
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 16:30:50 2016 +0300
+
+    Add new directory
+
+commit e2720315641dc175f13bdd88a9439b9e8b2c31b7
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 16:30:06 2016 +0300
+
+    Change log
+
+commit d4503ce0170248965658c76f0f81618cfddb7c02
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 12:07:20 2016 +0300
+
+    Add log.txt
+
+commit dcb1cc5ba66ec4f519299db243541ffeaa0c5b40
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 12:04:03 2016 +0300
+
+    Change status.txt; ignore some files
+
+:...skipping...
+commit 6a45050e465dbdaf0a1fe0155ea922947730cf35
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 16:30:50 2016 +0300
+
+    Add new directory
+
+commit e2720315641dc175f13bdd88a9439b9e8b2c31b7
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 16:30:06 2016 +0300
+
+    Change log
+
 commit d4503ce0170248965658c76f0f81618cfddb7c02
 Author: Grach <egri4stk@gmail.com>
 Date:   Tue Feb 9 12:07:20 2016 +0300
