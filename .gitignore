@@ -1,0 +1,4 @@
+# содержимое файла .gitignore для IDEA
+*.iml
+.idea/
+out/
