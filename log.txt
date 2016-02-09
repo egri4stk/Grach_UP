@@ -1,0 +1,11 @@
+commit dcb1cc5ba66ec4f519299db243541ffeaa0c5b40
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 12:04:03 2016 +0300
+
+    Change status.txt; ignore some files
+
+commit 211a99d7ede3f85ca4497a5bfd28a4c0407e6494
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 11:58:03 2016 +0300
+
+    Add .gitignore
