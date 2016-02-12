@@ -1,16 +1,64 @@
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonObject;
-import javax.json.JsonReader;
-import javax.json.JsonValue;
-import javax.json.*;
-import java.io.StringReader;
+import java.security.Timestamp;
+import java.util.*;
+
 public class Message {
-    public static void main(String[] args) {
+    private String id;
+    private String author;
+    private long timestamp;
+    private String message;
 
+    public Message(String id, String message, long timestamp, String author) {
+        this.id = id;
+        this.message = message;
+        this.timestamp = timestamp;
+        this.author = author;
+    }
+    public Message(){}
 
-
+    public String getId() {
+        return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;}
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getTime() {
+        long ms = timestamp;
+        Date date = new Date(ms);
+        String str = date.toString();
+        return str;
+    }
+
+    @Override
+    public String toString() {
+        return "" +
+                "id: " + id  + ' ' +
+                getTime()+
+                " " + author +
+                ": " + message;
+    }
 }
