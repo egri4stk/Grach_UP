@@ -1,4 +1,53 @@
-<<<<<<< HEAD
+commit 922ca40455f50104cfb84c861ecd6ca022d8cee7
+Author: Grach <egri4stk@gmail.com>
+Date:   Fri Feb 12 22:10:34 2016 +0300
+
+    Skelet of project, add all files
+
+commit 73ff8ec0cf6001f3cc080c885620ce6b901024b4
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 18:44:15 2016 +0300
+
+    Change Message.java
+
+commit 42959cb6fcabd1c4e27f0cf3eb3c83099a61e8da
+Merge: b4935be c0faa19
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 17:04:25 2016 +0300
+
+    try to fix
+
+commit b4935bee4510a72600dce1d6250cde777b5ed2cb
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 16:37:59 2016 +0300
+
+    change log
+:...skipping...
+commit 922ca40455f50104cfb84c861ecd6ca022d8cee7
+Author: Grach <egri4stk@gmail.com>
+Date:   Fri Feb 12 22:10:34 2016 +0300
+
+    Skelet of project, add all files
+
+commit 73ff8ec0cf6001f3cc080c885620ce6b901024b4
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 18:44:15 2016 +0300
+
+    Change Message.java
+
+commit 42959cb6fcabd1c4e27f0cf3eb3c83099a61e8da
+Merge: b4935be c0faa19
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 17:04:25 2016 +0300
+
+    try to fix
+
+commit b4935bee4510a72600dce1d6250cde777b5ed2cb
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 16:37:59 2016 +0300
+
+    change log
+
 commit 6a45050e465dbdaf0a1fe0155ea922947730cf35
 Author: Grach <egri4stk@gmail.com>
 Date:   Tue Feb 9 16:30:50 2016 +0300
@@ -10,6 +59,38 @@ Author: Grach <egri4stk@gmail.com>
 Date:   Tue Feb 9 16:30:06 2016 +0300
 
     Change log
+
+commit c0faa190b7479b46ae8dbb06097c0be5be8fb0ea
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 14:01:48 2016 +0300
+
+    Change status
+
+commit 0120d59cb0a89edc7af43094e80c7504a90f0fcd
+Merge: 981dbc8 5d1d038
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 13:58:37 2016 +0300
+Date:   Tue Feb 9 13:58:37 2016 +0300
+
+    Fix conglict with differents log.txt
+
+commit 981dbc8688688e5d10cf0bc7afce1bac5fb3f67b
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 13:55:19 2016 +0300
+
+    Change log
+
+commit 89b7d9b9f244275328cf682833535af88ceeb1d4
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 13:54:17 2016 +0300
+
+    Add log.txt to copy Rep
+
+commit 5d1d0382cd19eb1442dda716c6260ec39f3603eb
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 13:44:44 2016 +0300
+
+    update log
 
 commit d4503ce0170248965658c76f0f81618cfddb7c02
 Author: Grach <egri4stk@gmail.com>
@@ -23,21 +104,33 @@ Date:   Tue Feb 9 12:04:03 2016 +0300
 
     Change status.txt; ignore some files
 
-:...skipping...
-commit 6a45050e465dbdaf0a1fe0155ea922947730cf35
+commit 211a99d7ede3f85ca4497a5bfd28a4c0407e6494
 Author: Grach <egri4stk@gmail.com>
-Date:   Tue Feb 9 16:30:50 2016 +0300
+Date:   Tue Feb 9 11:58:03 2016 +0300
 
-    Add new directory
+    Add .gitignore
+ ESC[D
 
-commit e2720315641dc175f13bdd88a9439b9e8b2c31b7
+    Fix conglict with differents log.txt
+
+commit 981dbc8688688e5d10cf0bc7afce1bac5fb3f67b
 Author: Grach <egri4stk@gmail.com>
-Date:   Tue Feb 9 16:30:06 2016 +0300
+Date:   Tue Feb 9 13:55:19 2016 +0300
 
     Change log
 
-=======
->>>>>>> c0faa190b7479b46ae8dbb06097c0be5be8fb0ea
+commit 89b7d9b9f244275328cf682833535af88ceeb1d4
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 13:54:17 2016 +0300
+
+    Add log.txt to copy Rep
+
+commit 5d1d0382cd19eb1442dda716c6260ec39f3603eb
+Author: Grach <egri4stk@gmail.com>
+Date:   Tue Feb 9 13:44:44 2016 +0300
+
+    update log
+
 commit d4503ce0170248965658c76f0f81618cfddb7c02
 Author: Grach <egri4stk@gmail.com>
 Date:   Tue Feb 9 12:07:20 2016 +0300
