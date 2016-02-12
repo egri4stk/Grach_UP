@@ -7,7 +7,7 @@ public class Message {
     private long timestamp;
     private String message;
 
-    public Message(String id, String message, long timestamp, String author) {
+    public Message(String id,String author,  long timestamp, String message) {
         this.id = id;
         this.message = message;
         this.timestamp = timestamp;

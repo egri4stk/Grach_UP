@@ -24,8 +24,9 @@ public class Chat {
 
             Date date = new Date();
             BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
-
+        System.out.println("Enter name: ");
         String name = reader2.readLine();
+        System.out.println("Enter message: ");
         String mes = reader2.readLine();
 
             long timest = date.getTime();
@@ -39,9 +40,46 @@ public class Chat {
         for(Message it: history){
             System.out.println(it.toString());
         }
+        System.out.println("Enter index for del: ");
+        String idDel = reader2.readLine();
+
+      Iterator <Message> it = history.iterator();
+        while (it.hasNext()){
+            if(it.next().getId().equals(idDel)) {
+                it.remove();
+                System.out.println("DELETE");
+                break;
+            }
+        }
+        for(Message it1: history){
+            System.out.println(it1.toString());
+        }
+        System.out.println("Enter name for search: ");
+        String authSearch = reader2.readLine();
+        boolean flag1 = false;
+        for(Message it2: history) {
+            if (it2.getAuthor().equals(authSearch)) {
+                System.out.println(it2.toString());
+                flag1 = true;
+            }
+        }
+            if(!flag1) System.out.println("Can't found");
+        System.out.println("Enter word for search: ");
+        String wordSearch = reader2.readLine();
+        boolean flag2 = false;
+        for(Message it2: history) {
+            if (it2.getMessage().contains(wordSearch)) {
+                System.out.println(it2.toString());
+                flag2 = true;
+            }
+        }
+        if(!flag2) System.out.println("Can't found");
 
     }
+
     }
+
+
 
 
 
