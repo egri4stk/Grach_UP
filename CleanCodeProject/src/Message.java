@@ -1,6 +1,6 @@
 import java.security.Timestamp;
-import java.util.*;
 
+import java.util.Date;
 public class Message {
     private String id;
     private String author;
@@ -51,6 +51,13 @@ public class Message {
         Date date = new Date(ms);
         String str = date.toString();
         return str;
+    }
+
+    public Date getDate() {
+        long ms = timestamp;
+        Date date = new Date(ms);
+
+        return date;
     }
 
     @Override
