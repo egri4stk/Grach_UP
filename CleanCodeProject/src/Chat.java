@@ -31,6 +31,7 @@ public class Chat {
         writer.write("\n"+"End GRACHCHAT "+"\n");
         writer.close();
 
+
         }
 
 
@@ -134,7 +135,6 @@ public class Chat {
             date1 = format1.parse(sc.nextLine());
         } catch (ParseException e) {
             writer.write(e.getMessage()+"\n");
-
 
         }
         System.out.println("input [date2]: dd/mm/yyyy HH:mm:ss");
