@@ -13,11 +13,10 @@ import java.util.Date;
 
 public class Chat {
     public static void main(final String[] args) throws IOException {
-
+        startUp();
         ArrayList<Message> history = new ArrayList<Message>();
         Writer writer = new FileWriter("Output.json");
         BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
-        startUp();
         chooser(history, reader2);
 
     }
@@ -25,32 +24,32 @@ public class Chat {
     public static void chooser(ArrayList<Message> history, BufferedReader reader2) throws IOException {
         BufferedReader chooseReader = new BufferedReader(new InputStreamReader(System.in));
 
-        String choose="";
-        while (!choose.equals(".exit")){
+        String choose = "";
+        while (!choose.equals(".exit")) {
             System.out.print("GRACHAT:> ");
             choose = chooseReader.readLine();
 
-            switch (choose){
-                case ".help" :
+            switch (choose) {
+                case ".help":
                     help();
                     break;
-                case ".load" :
+                case ".load":
                     Gson gson = load(history);
                     break;
-                case ".save" :
+                case ".save":
                     save(history);
                     break;
                 case ".add":
                     addMessage(history, reader2);
                     break;
-                case ".del" :
+                case ".del":
                     delMessage(history, reader2);
                     break;
                 case ".show":
                     show(history);
                     break;
 
-                case ".search" :
+                case ".search":
 
                     break;
                 case ".search.a":
@@ -69,7 +68,8 @@ public class Chat {
                     System.out.println("Good luck!");
                     break;
                 default:
-                    System.out.println("\""+choose+"\""+" is not recognized as an internal or external command, operable program or batch file. ");
+                    System.out.println("\"" + choose + "\"" + " is not recognized as an internal or external command, operable program or batch file. "+"\n"+
+                    "use .help");
                     break;
 
             }
@@ -82,7 +82,7 @@ public class Chat {
         Scanner sc = new Scanner(System.in);
         System.out.println("input start time in format: MM/dd/yyyy HH:mm:ss");
         SimpleDateFormat start = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-        Date stDat=null;
+        Date stDat = null;
         try {
             stDat = start.parse(sc.nextLine());
         } catch (ParseException e) {
@@ -90,16 +90,14 @@ public class Chat {
         }
         System.out.println("input end time in format: MM/dd/yyyy HH:mm:ss");
         SimpleDateFormat end = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-        Date enDat=null;
+        Date enDat = null;
         try {
             enDat = end.parse(sc.nextLine());
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        for (Message iter: history)
-        {
-            if (iter.getDate().after(stDat) && iter.getDate().before(enDat))
-            {
+        for (Message iter : history) {
+            if (iter.getDate().after(stDat) && iter.getDate().before(enDat)) {
                 System.out.println(iter.toString());
                 ifFind = true;
             }
@@ -114,18 +112,15 @@ public class Chat {
 
         String expression = reader2.readLine();
         boolean find = false;
-        for(Message it2 : history)
-        {
+        for (Message it2 : history) {
             Pattern pa = Pattern.compile(expression);
             Matcher ma = pa.matcher(it2.getMessage());
-            if(ma.find())
-            {
+            if (ma.find()) {
                 find = true;
                 System.out.println(it2.toString());
             }
         }
-        if(find == false)
-        {
+        if (find == false) {
             System.out.println("History hasn't messages with this regular expression");
         }
     }
@@ -134,30 +129,30 @@ public class Chat {
         System.out.println("Enter word for search: ");
         String wordSearch = reader2.readLine();
         boolean flag2 = false;
-        for(Message it2: history) {
+        for (Message it2 : history) {
             if (it2.getMessage().contains(wordSearch)) {
                 System.out.println(it2.toString());
                 flag2 = true;
             }
         }
-        if(!flag2) System.out.println("Can't found");
+        if (!flag2) System.out.println("Can't found");
     }
 
     public static void searchAuthor(ArrayList<Message> history, BufferedReader reader2) throws IOException {
         System.out.println("Enter name for search: ");
         String authSearch = reader2.readLine();
         boolean flag1 = false;
-        for(Message it2: history) {
+        for (Message it2 : history) {
             if (it2.getAuthor().equals(authSearch)) {
                 System.out.println(it2.toString());
                 flag1 = true;
             }
         }
-        if(!flag1) System.out.println("Can't found");
+        if (!flag1) System.out.println("Can't found");
     }
 
     public static void show(ArrayList<Message> history) {
-        for(Message it: history){
+        for (Message it : history) {
             System.out.println(it.toString());
         }
     }
@@ -167,8 +162,8 @@ public class Chat {
         String idDel = reader2.readLine();
 
         Iterator<Message> it = history.iterator();
-        while (it.hasNext()){
-            if(it.next().getId().equals(idDel)) {
+        while (it.hasNext()) {
+            if (it.next().getId().equals(idDel)) {
                 it.remove();
                 System.out.println("DELETE");
                 break;
@@ -185,16 +180,16 @@ public class Chat {
         String mes = reader2.readLine();
 
         long timest = date.getTime();
-        Integer tempPer =  Integer.parseInt(history.get(history.size()-1).getId()) +1;
+        Integer tempPer = Integer.parseInt(history.get(history.size() - 1).getId()) + 1;
 
         String tempId = tempPer.toString();
-        history.add(new Message(tempId,name,timest,mes));
+        history.add(new Message(tempId, name, timest, mes));
     }
 
     public static void save(ArrayList<Message> history) throws IOException {
         Writer writerOut = new FileWriter("input.json");
         Gson gson = new GsonBuilder().create();
-        gson.toJson(history,writerOut);
+        gson.toJson(history, writerOut);
         writerOut.close();
     }
 
@@ -203,27 +198,28 @@ public class Chat {
         Gson gson = new GsonBuilder().create();
         Message[] p = gson.fromJson(reader, Message[].class);
         history.clear();
-        for(int i=0; i< p.length; i++){
+        for (int i = 0; i < p.length; i++) {
 
-           history.add(p[i]);
+            history.add(p[i]);
         }
         return gson;
     }
 
     public static void startUp() {
         System.out.print("---- Welcom to GRACHAT ----" + "\n" +
-                "Type \".help\" and press \"enter\" for information " + "\n" );
+                "Type \".help\" and press \"enter\" for information " + "\n");
     }
-    public static void help(){
-    System.out.println( ".load  " + ".save  " +".add  " +".del  "+ ".show"+ "\n"+
-         ".search  " + "\n" + ".search.a  "+".search.w  "+".search.r  " +".search.t"
-                +"\n"+".help  "+".exit  "+"\n"
 
-        );
-
-
+    public static void help() {
+        System.out.println(".load  " + ".save  " + ".add  " + ".del  " + ".show  "  +
+                ".search  " + "\n" + ".search.a  " + ".search.w  " + ".search.r  " + ".search.t"
+                + "\n" + ".help  " + ".exit  " + "\n");
     }
-    }
+}
+
+
+
+
 
 
 
