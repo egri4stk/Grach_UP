@@ -1,5 +1,7 @@
-import java.security.Timestamp;
 
+import java.security.Timestamp;
+import java.sql.Time;
+import java.time.ZoneId;
 import java.util.Date;
 public class Message {
     private String id;
@@ -49,14 +51,16 @@ public class Message {
     public String getTime() {
         long ms = timestamp;
         Date date = new Date(ms);
-        String str = date.toString();
-        return str;
+        ZoneId zone;
+        String strD = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().toString();
+        String strT = date.toInstant().atZone(ZoneId.systemDefault()).toLocalTime().toString();
+        return strD + "  " + strT;
     }
 
     public Date getDate() {
         long ms = timestamp;
-        Date date = new Date(ms);
 
+        Date date = new Date(ms);
         return date;
     }
 

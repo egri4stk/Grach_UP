@@ -1,0 +1,86 @@
+---------------------------------------
+Start GRACHCHAT 2016-02-15 22:24:51.466
+Command ".help"
+
+Command ".show"
+Command ".show"
+Command ".load" completed successfully size: 7
+Command ".show" completed successfully, show: 7 messages 
+Command ".add" completed successfully, add id: 10 message 
+Command ".del" not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message 
+Command ".search.a" completed successfully, found: 3 messages 
+End GRACHCHAT
+---------------------------------------
+Start GRACHCHAT 2016-02-15 22:29:14.01
+Command ".help"
+Command ".load" completed successfully size: 7
+Command ".add" completed successfully, add id: 10 message 
+Command ".show" completed successfully, show: 8 messages 
+Command ".search.a" completed successfully, found: 2 messages 
+End GRACHCHAT ---------------------------------------
+Start GRACHCHAT 2016-02-15 22:50:01.903
+
+Command ".add"
+Command ".add"-1
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-15 22:51:06.068
+
+Command ".show"
+Command ".show"Empty history
+Command ".load"
+Command ".load" completed successfully size: 8
+Command ".show"
+Command ".show" completed successfully, show: 8 messages 
+Command ".del"
+Command ".del" not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message 
+Command ".save"
+Command ".save" completed successfully
+Command ".exit"
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-15 22:52:23.285
+"sef" is not recognized as an internal or external command, operable program or batch file. "sdf" is not recognized as an internal or external command, operable program or batch file. Command ".help"
+Command ".show"Empty history
+Command ".load" completed successfully size: 8
+Command ".show" completed successfully, show: 8 messages 
+Command ".del" not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message  not found delete id: 2 message 
+Command ".save" completed successfully
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-15 22:54:08.37
+Command ".help""sdf" is not recognized as an internal or external command, operable program or batch file. 
+"sdf" is not recognized as an internal or external command, operable program or batch file. 
+
+Command ".show"Empty history
+Command ".load" completed successfully size: 8
+Command ".show" completed successfully, show: 8 messages 
+Command ".add" completed successfully, add id: 11 message 
+Command ".add" completed successfully, add id: 12 message 
+Command ".show" completed successfully, show: 10 messages 
+Command ".load" completed successfully size: 8
+Command ".show" completed successfully, show: 8 messages 
+Command ".search.a" completed successfully, found: 2 messages 
+Command ".search.w" completed successfully, found: 9 messages 
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-15 23:02:10.18
+Command ".help""asd" is not recognized as an internal or external command, operable program or batch file. 
+
+Command ".show"Empty history
+Command ".add" completed successfully, add id: 1 message 
+Command ".show" completed successfully, show: 0 messages 
+Command ".load" completed successfully size: 8
+Command ".show" completed successfully, show: 8 messages 
+Command ".del" not found delete id: 2 message 
+Command ".show" completed successfully, show: 8 messages 
+Command ".search.a" completed successfully, found: 2 messages ".search.d" is not recognized as an internal or external command, operable program or batch file. 
+"sdfgrds" is not recognized as an internal or external command, operable program or batch file. 
+Command ".help"
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-15 23:06:19.325
+
+Command ".show"Empty history
+Command ".search.w"Unparseable date: "sefsefsef"Unparseable date: "sfsdfedfverf"Can't found
+End GRACHCHAT 
