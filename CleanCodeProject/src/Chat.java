@@ -15,7 +15,7 @@ public class Chat {
     public static void main(final String[] args) throws IOException {
         startUp();
         ArrayList<Message> history = new ArrayList<Message>();
-        FileWriter writer = new FileWriter("logfile.txt",true);
+        FileWriter writer = new FileWriter("logiprogi.txt",true);
         BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
 
         writer.write("---------------------------------------"+"" +"\n"+
