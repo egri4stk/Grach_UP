@@ -1,9 +1,9 @@
 import java.io.IOException;
 
 public class Start {
-    public static void main(final String[] args) throws IOException{
+    public static void main(final String[] args) throws IOException {
 
-    Chat go= new Chat();
+        Chat go = new Chat();
         go.startChat();
     }
 

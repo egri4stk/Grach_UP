@@ -1,13 +1,14 @@
 
 import java.sql.Timestamp;
 import java.util.Date;
+
 public class Message {
     private String id;
     private String author;
     private long timestamp;
     private String message;
 
-    public Message(String id,String author,  long timestamp, String message) {
+    public Message(String id, String author, long timestamp, String message) {
         this.id = id;
         this.message = message;
         this.timestamp = timestamp;
@@ -41,8 +42,8 @@ public class Message {
     @Override
     public String toString() {
         return "" +
-                "id: " + id  + ' ' +
-                getTime()+
+                "id: " + id + ' ' +
+                getTime() +
                 " " + author +
                 ": " + message;
     }
