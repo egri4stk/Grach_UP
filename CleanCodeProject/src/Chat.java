@@ -274,7 +274,19 @@ public class Chat {
         Date date = new Date();
         writer.write("\n" + "Command \".add\"");
         System.out.println("Enter name: ");
-        String name = reader2.readLine();
+        String name = "";
+        boolean flag = false;
+
+        while (name.equals("")) {
+            name = reader2.readLine();
+            if (!name.equals("")) {
+                flag = true;
+            }
+            if (!flag) {
+                writer.write("\n"+" warning! Empty name! ");
+                System.out.println("Enter not empty name,pls: ");
+            }
+        }
         System.out.println("Enter message: ");
         String mes = reader2.readLine();
         long timest = date.getTime();

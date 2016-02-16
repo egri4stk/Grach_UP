@@ -207,3 +207,32 @@ Command ".show" completed successfully, show: 7 messages
 -------
 Session statistic: Delete: 0 messages | Add: 0 messages
 End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 23:54:40.545
+Command ".help"
+Command ".add" warning! Empty name!  warning! Empty name!  warning! Empty name!  warning! Empty name!  warning! Empty name!  warning! Empty name!  warning! Empty name!  warning! Empty name!  completed successfully, add id: 1 message 
+"SDFSDFDSSDSD" is not recognized as an internal or external command, operable program or batch file. 
+Command ".show" completed successfully, show: 0 messages 
+-------
+Session statistic: Delete: 0 messages | Add: 1 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 23:56:45.913
+
+Command ".add"+"\n" warning! Empty name!  completed successfully, add id: 1 message 
+"ad" is not recognized as an internal or external command, operable program or batch file. 
+-------
+Session statistic: Delete: 0 messages | Add: 1 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 23:58:24.93
+Command ".help"
+"sdf" is not recognized as an internal or external command, operable program or batch file. 
+Command ".show" Empty history
+Command ".add"+"\n" warning! Empty name! +"\n" warning! Empty name! +"\n" warning! Empty name! +"\n" warning! Empty name! +"\n" warning! Empty name!  completed successfully, add id: 1 message 
+Command ".add" completed successfully, add id: 2 message 
+".shiw" is not recognized as an internal or external command, operable program or batch file. 
+Command ".show" completed successfully, show: 1 messages 
+-------
+Session statistic: Delete: 0 messages | Add: 2 messages
+End GRACHCHAT 
