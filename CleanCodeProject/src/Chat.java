@@ -13,31 +13,25 @@ import java.util.regex.Pattern;
 import java.util.Date;
 
 public class Chat {
-    public static void main(final String[] args) throws IOException {
-        startUp();
-        ArrayList<Message> history = new ArrayList<>();
-        FileWriter writer = new FileWriter("logiprogi.txt", true);
-        BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
+    ArrayList<Message> history;
+    FileWriter writer;
+    BufferedReader reader2;
+    Integer delCount;
+    Integer addCount;
 
+    public Chat() throws IOException {
+        delCount = 0;
+        addCount = 0;
+        history = new ArrayList<>();
+        writer = new FileWriter("logiprogi.txt", true);
+        reader2 = new BufferedReader(new InputStreamReader(System.in));
         writer.write("---------------------------------------" + "" + "\n" +
                 "Start GRACHCHAT " + new Timestamp(System.currentTimeMillis()) + "\n");
-        try {
-            chooser(history, reader2, writer);
-        } catch (IOException e) {
-            writer.write("IOException" + e.getMessage() + "\n");
-        } catch (ArrayIndexOutOfBoundsException e) {
-            writer.write("ArrayIndex Exception " + "\n");
-        }
-
-        writer.write("\n" + "End GRACHCHAT " + "\n");
-        writer.close();
-
-
     }
 
 
-    public static void searchChose(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException {
-        System.out.println("Input .a /.w /.r or .t to choose type of searching" +
+    public void searchChose(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException {
+        System.out.println("Input .a  .w  .r  or .t to choose type of searching" +
                 "\n" + "(author, word, regularEx or time");
         BufferedReader chooseReader2 = new BufferedReader(new InputStreamReader(System.in));
         String choose;
@@ -60,14 +54,14 @@ public class Chat {
             default:
                 System.out.println("\"" + choose + "\"" + " is not recognized as an internal " +
                         "or external command, operable program or batch file. " + "\n" +
-                        "use .a / .w / .r or .t");
-                writer.write("\"" + choose + "\"" + " is not recognized as an internal " +
-                        "or external command, operable program or batch file. " + "\n");
+                        "use .a  .w  .r  or .t");
+                writer.write("\n" + "\"" + choose + "\"" + " is not recognized as an internal " +
+                        "or external command, operable program or batch file. ");
                 break;
         }
     }
 
-    public static void chooser(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException {
+    public void chooser(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException {
         BufferedReader chooseReader = new BufferedReader(new InputStreamReader(System.in));
         String choose = "";
         while (!choose.equals(".exit")) {
@@ -110,18 +104,20 @@ public class Chat {
                     break;
                 case ".exit":
                     System.out.println("Good luck!");
+                    this.endChat();
                     break;
                 default:
                     System.out.println("\"" + choose + "\"" + " is not recognized as an internal or external command, operable program or batch file. " + "\n" +
                             "use .help");
-                    writer.write("\"" + choose + "\"" + " is not recognized as an internal " +
-                            "or external command, operable program or batch file. " + "\n");
+                    writer.write("\n" + "\"" + choose + "\"" + " is not recognized as an internal " +
+                            "or external command, operable program or batch file. ");
+
                     break;
             }
         }
     }
 
-    public static void searchTime(ArrayList<Message> history, FileWriter writer) throws IOException {
+    public void searchTime(ArrayList<Message> history, FileWriter writer) throws IOException {
 
         writer.write("\n" + "Command \".search.w\"");
         boolean flag1 = false;
@@ -134,7 +130,7 @@ public class Chat {
         try {
             date1 = format1.parse(sc.nextLine());
         } catch (ParseException e) {
-            writer.write(e.getMessage() + "\n");
+            writer.write("\n" + "Exception: " + e.getMessage());
 
         }
         System.out.println("input [date2]: dd/mm/yyyy HH:mm:ss");
@@ -142,7 +138,7 @@ public class Chat {
         try {
             date2 = format1.parse(sc.nextLine());
         } catch (ParseException e) {
-            writer.write(e.getMessage() + "\n");
+            writer.write("\n" + "Exception: " + e.getMessage());
         }
         for (Message it : history) {
             if ((date1 != null) && (date2 != null)) {
@@ -157,13 +153,13 @@ public class Chat {
         }
         if (!flag1) {
             System.out.println("Can't found");
-            writer.write("Can't found");
+
         } else {
             writer.write(" completed successfully, found: " + count + " messages ");
         }
     }
 
-    public static void searchReg(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException {
+    public void searchReg(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException {
 
         System.out.println("Enter regular expression");
 
@@ -188,7 +184,7 @@ public class Chat {
         }
     }
 
-    public static void searchWord(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException {
+    public void searchWord(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException {
 
         System.out.println("Enter word for search: ");
         String wordSearch = reader2.readLine();
@@ -210,7 +206,7 @@ public class Chat {
         }
     }
 
-    public static void searchAuthor(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException {
+    public void searchAuthor(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException {
 
         writer.write("\n" + "Command \".search.a\"");
         System.out.println("Enter name for search: ");
@@ -233,21 +229,21 @@ public class Chat {
     }
 
 
-    public static void show(ArrayList<Message> history, FileWriter writer) throws IOException {
+    public void show(ArrayList<Message> history, FileWriter writer) throws IOException {
         writer.write("\n" + "Command \".show\"");
         for (Message it : history) {
             System.out.println(it.toString());
         }
         if (history.isEmpty()) {
             System.out.println("Empty history");
-            writer.write("Empty history");
+            writer.write(" Empty history");
         } else {
             writer.write(" completed successfully, show: " + (history.size() - 1) + " messages ");
         }
     }
 
 
-    public static void delMessage(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException {
+    public void delMessage(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException {
         if (history.isEmpty()) {
             System.out.println("History is empty");
             return;
@@ -267,11 +263,14 @@ public class Chat {
         }
         if (!flag) {
             writer.write(" not found delete id: " + idDel + " message ");
-        } else writer.write(" completed successfully, delete id: " + idDel + " message ");
+        } else {
+            writer.write(" completed successfully, delete id: " + idDel + " message ");
+            delCount++;
+        }
     }
 
 
-    public static void addMessage(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException, NumberFormatException {
+    public void addMessage(ArrayList<Message> history, BufferedReader reader2, FileWriter writer) throws IOException, NumberFormatException {
         Date date = new Date();
         writer.write("\n" + "Command \".add\"");
         System.out.println("Enter name: ");
@@ -284,17 +283,17 @@ public class Chat {
             String tempId = tempPer.toString();
             history.add(new Message(tempId, name, timest, mes));
             writer.write(" completed successfully, add id: " + tempId + " message ");
+            addCount++;
         } else {
             Integer tempPer = 1;
             String tempId = tempPer.toString();
             history.add(new Message(tempId, name, timest, mes));
             writer.write(" completed successfully, add id: " + tempId + " message ");
-
+            addCount++;
         }
-
     }
 
-    public static void save(ArrayList<Message> history, FileWriter writer) throws IOException {
+    public void save(ArrayList<Message> history, FileWriter writer) throws IOException {
         writer.write("\n" + "Command \".save\"");
         Writer writerOut = new FileWriter("input.json");
         Gson gson = new GsonBuilder().create();
@@ -303,7 +302,7 @@ public class Chat {
         writer.write(" completed successfully");
     }
 
-    public static void load(ArrayList<Message> history, FileWriter writer) throws IOException {
+    public void load(ArrayList<Message> history, FileWriter writer) throws IOException {
         writer.write("\n" + "Command \".load\"");
         Reader reader = new InputStreamReader(new FileInputStream("input.json"));
         Gson gson = new GsonBuilder().create();
@@ -312,27 +311,40 @@ public class Chat {
         Collections.addAll(history, p);
 
         if (!history.isEmpty()) {
-            writer.write(" completed successfully" + " size: " + (history.size() - 1));
+            writer.write(" completed successfully" + ", size: " + (history.size() - 1));
             System.out.println("Load completed successfully" + " size: " + (history.size() - 1));
         } else {
             writer.write(" empty file");
             System.out.println("Empty file");
         }
-
-
     }
 
-    public static void startUp() {
+    public void startInfo() {
         System.out.print("---- Welcom to GRACHAT ----" + "\n" +
                 "Type \".help\" and press \"enter\" for information " + "\n");
     }
 
-    public static String help() {
+    public String help() {
         System.out.println(".load  " + ".save  " + ".add  " + ".del  " + ".show  " +
                 ".search  " + "\n" + ".search.a  " + ".search.w  " + ".search.r  " + ".search.t"
                 + "\n" + ".help  " + ".exit  ");
         return "Command \".help\"";
     }
+
+    public void startChat() throws IOException {
+        startInfo();
+        chooser(history, reader2, writer);
+    }
+
+    public void endChat() throws IOException {
+        writer.write("\n" + "-------" + "\n"
+                + "Session statistic: " + "Delete: " + delCount + " messages | Add: " + addCount + " messages" +
+                "\n" + "End GRACHCHAT " + "\n");
+
+        writer.close();
+
+    }
+
 }
 
 

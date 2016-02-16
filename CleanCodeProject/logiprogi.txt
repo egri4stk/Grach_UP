@@ -97,3 +97,113 @@ Command ".help"
 Command ".load" completed successfully size: 8
 Command ".show" completed successfully, show: 8 messages 
 End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 15:03:32.836
+Command ".help""ad" is not recognized as an internal or external command, operable program or batch file. 
+
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 15:05:30.7
+Command ".help""ad" is not recognized as an internal or external command, operable program or batch file. 
+
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 15:06:29.176
+"fghjk" is not recognized as an internal or external command, operable program or batch file. 
+"fghjk" is not recognized as an internal or external command, operable program or batch file. 
+Command ".help"
+Command ".show"Empty history
+Command ".load" completed successfully size: 7
+Command ".show" completed successfully, show: 7 messages 
+Command ".add" completed successfully, add id: 11 message 
+Command ".add" completed successfully, add id: 12 message 
+Command ".show" completed successfully, show: 9 messages ".search " is not recognized as an internal or external command, operable program or batch file. 
+
+Command ".search.a" completed successfully, found: 2 messages 
+Command ".search.w" completed successfully, found: 9 messages 
+Command ".del" completed successfully, delete id: 1 message "del" is not recognized as an internal or external command, operable program or batch file. 
+
+Command ".del" not found delete id: 2134 message 
+Command ".show" completed successfully, show: 8 messages 
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 15:21:47.746
+Command ".help"
+Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 15:22:30.762
+Command ".help"
+Command ".add" completed successfully, add id: 1 message 
+Command ".add" completed successfully, add id: 2 message 
+Command ".show" completed successfully, show: 1 messages 
+Command ".load" completed successfully, size: 7
+Command ".show" completed successfully, show: 7 messages 
+Command ".del" completed successfully, delete id: 1 message 
+Command ".search.w"Unparseable date: "wergbhdf"
+Unparseable date: "gf"
+Can't found
+Session statistic: Delete: 1 messages | Add: 2 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 15:26:14.801
+
+Command ".load" completed successfully, size: 7
+Command ".show" completed successfully, show: 7 messages 
+Command ".add" completed successfully, add id: 11 message 
+Command ".show" completed successfully, show: 8 messages ".seardch.t" is not recognized as an internal or external command, operable program or batch file. 
+
+Command ".search.w"
+Unparseable date: "wefgb"
+Exception: Unparseable date: "ewrtfg"Can't found
+Session statistic: Delete: 0 messages | Add: 1 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 15:27:52.363
+"wsdaef" is not recognized as an internal or external command, operable program or batch file. 
+"we3asrfgt" is not recognized as an internal or external command, operable program or batch file. 
+"wqEADSFR" is not recognized as an internal or external command, operable program or batch file. 
+".HELP" is not recognized as an internal or external command, operable program or batch file. 
+Command ".help"
+Command ".load" completed successfully, size: 7
+Command ".load" completed successfully, size: 7
+Command ".load" completed successfully, size: 7
+Command ".load" completed successfully, size: 7
+Command ".show" completed successfully, show: 7 messages 
+Command ".del" not found delete id: wqesdfvb message "12wqesrfgwed3q54trgf" is not recognized as an internal or external command, operable program or batch file. 
+
+Command ".del" not found delete id: werfd message Command ".help""spddpdpdp" is not recognized as an internal or external command, operable program or batch file. 
+
+Session statistic: Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 15:30:22.822
+Command ".help"
+"qwsedrfg" is not recognized as an internal or external command, operable program or batch file. 
+"qwdsef" is not recognized as an internal or external command, operable program or batch file. 
+"qwsdefr" is not recognized as an internal or external command, operable program or batch file. 
+"qwdefr" is not recognized as an internal or external command, operable program or batch file. 
+Command ".load" completed successfully, size: 7
+Command ".show" completed successfully, show: 7 messages 
+Command ".show" completed successfully, show: 7 messages 
+Command ".search.w"
+Exception: Unparseable date: "bgfds"
+Exception: Unparseable date: "bgfd"
+"bgf" is not recognized as an internal or external command, operable program or batch file. 
+Session statistic: Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 15:32:56.032
+
+"afd" is not recognized as an internal or external command, operable program or batch file. 
+***************
+Session statistic: Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 15:33:39.482
+Command ".help"
+Command ".load" completed successfully, size: 7
+Command ".show" completed successfully, show: 7 messages 
+-------
+Session statistic: Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 

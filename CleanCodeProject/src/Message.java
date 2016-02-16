@@ -28,15 +28,13 @@ public class Message {
 
     public String getTime() {
         long ms = timestamp;
-
-        Date a = new Date(ms);
-        Timestamp time1 = new Timestamp(a.getTime());
-        return time1.toString();
+        Date tempDate = new Date(ms);
+        Timestamp tempTime = new Timestamp(tempDate.getTime());
+        return tempTime.toString();
     }
 
     public Date getDate() {
         long ms = timestamp;
-
         return new Date(ms);
     }
 
