@@ -84,3 +84,16 @@ Start GRACHCHAT 2016-02-15 23:06:19.325
 Command ".show"Empty history
 Command ".search.w"Unparseable date: "sefsefsef"Unparseable date: "sfsdfedfverf"Can't found
 End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 11:43:14.042
+".sadf" is not recognized as an internal or external command, operable program or batch file. 
+Command ".help"
+Command ".search.a" Can't found"ewd" is not recognized as an internal or external command, operable program or batch file. 
+
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-16 12:02:05.012
+Command ".help"
+Command ".load" completed successfully size: 8
+Command ".show" completed successfully, show: 8 messages 
+End GRACHCHAT 

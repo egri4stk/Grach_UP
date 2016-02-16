@@ -1,7 +1,5 @@
 
 import java.sql.Timestamp;
-import java.sql.Time;
-import java.time.ZoneId;
 import java.util.Date;
 public class Message {
     private String id;
@@ -15,42 +13,21 @@ public class Message {
         this.timestamp = timestamp;
         this.author = author;
     }
-    public Message(){}
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public long getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;}
-
     public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
     public String getTime() {
         long ms = timestamp;
-        Date date = new Date(ms);
 
         Date a = new Date(ms);
         Timestamp time1 = new Timestamp(a.getTime());
@@ -60,8 +37,7 @@ public class Message {
     public Date getDate() {
         long ms = timestamp;
 
-        Date date = new Date(ms);
-        return date;
+        return new Date(ms);
     }
 
     @Override
