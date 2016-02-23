@@ -347,3 +347,28 @@ Command ".search.a" completed successfully, found: 2 messages
 -------
 Session statistic: Delete: 1 messages | Add: 2 messages
 End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-23 18:37:47.71
+
+"fdbg" is not recognized as an internal or external command, operable program or batch file. 
+"erg" is not recognized as an internal or external command, operable program or batch file. 
+Command ".help"
+Command ".load" completed successfully, size: 9
+Command ".show" completed successfully, show: 9 messages 
+-------
+Session statistic: Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-23 18:41:48.801
+
+"esf" is not recognized as an internal or external command, operable program or batch file. 
+"ewf" is not recognized as an internal or external command, operable program or batch file. 
+"þðóäç" is not recognized as an internal or external command, operable program or batch file. 
+"help" is not recognized as an internal or external command, operable program or batch file. 
+Command ".help"
+Command ".search.w" Can't found
+Command ".show" Empty history
+Command ".load" completed successfully, size: 9
+-------
+Session statistic: Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 
