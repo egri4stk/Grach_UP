@@ -1,3 +1,4 @@
+package grachat;
 
 import java.sql.Timestamp;
 import java.util.Date;

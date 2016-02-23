@@ -236,3 +236,114 @@ Command ".show" completed successfully, show: 1 messages
 -------
 Session statistic: Delete: 0 messages | Add: 2 messages
 End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-17 00:04:06.571
+
+"фуа" is not recognized as an internal or external command, operable program or batch file. 
+"help" is not recognized as an internal or external command, operable program or batch file. Command ".help"
+Command ".load" completed successfully, size: 7
+".shiw" is not recognized as an internal or external command, operable program or batch file. 
+Command ".show" completed successfully, show: 7 messages 
+Command ".add"
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name!  completed successfully, add id: 11 message 
+Command ".add" completed successfully, add id: 12 message 
+Command ".show" completed successfully, show: 9 messages 
+Command ".del" not found delete id: 123213 message 
+Command ".del" not found delete id: 2 message 
+Command ".del" completed successfully, delete id: 9 message 
+Command ".show" completed successfully, show: 8 messages 
+-------
+Session statistic: Delete: 1 messages | Add: 2 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-23 11:30:53.276
+
+"ю" is not recognized as an internal or external command, operable program or batch file. Command ".help"
+Command ".load" completed successfully, size: 7
+Command ".search.w"Wrong reg: *uWrong reg: *uWrong reg: *uWrong reg: *uWrong reg: *uWrong reg: *uWrong reg: *uWrong reg: *u Can't found
+-------
+Session statistic: Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-23 11:33:57.886
+Command ".help"
+Command ".load" completed successfully, size: 7
+Command ".search.w"
+Wrong reg: *u Can't found
+-------
+Session statistic: Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-23 18:10:57.086
+
+"seaf" is not recognized as an internal or external command, operable program or batch file. 
+"fse" is not recognized as an internal or external command, operable program or batch file. 
+"юруд" is not recognized as an internal or external command, operable program or batch file. 
+Command ".help"
+Command ".help"
+Command ".help"
+Command ".load" completed successfully, size: 7
+Command ".show" completed successfully, show: 7 messages 
+".search" is not recognized as an internal or external command, operable program or batch file. 
+Command ".search.w"
+Wrong reg: *u Can't found
+Command ".show" completed successfully, show: 7 messages 
+-------
+Session statistic: Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-23 18:12:37.317
+
+Command ".load" completed successfully, size: 7
+Command ".add" completed successfully, add id: 11 message 
+Command ".add" completed successfully, add id: 12 message 
+Command ".add" completed successfully, add id: 13 message 
+Command ".load" completed successfully, size: 7
+Command ".del" not found delete id: 2 message 
+Command ".del" not found delete id: 123456 message 
+Command ".del" not found delete id: 1234567 message 
+Command ".show" completed successfully, show: 7 messages 
+-------
+Session statistic: Delete: 0 messages | Add: 3 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-23 18:13:27.955
+
+Command ".help"
+-------
+Session statistic: Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-23 18:24:21.762
+
+"sf" is not recognized as an internal or external command, operable program or batch file. 
+Command ".help"
+Command ".load" completed successfully, size: 7
+Command ".show" completed successfully, show: 7 messages 
+Command ".add" completed successfully, add id: 11 message 
+Command ".add" completed successfully, add id: 12 message 
+Command ".save" completed successfully
+Command ".show" completed successfully, show: 9 messages 
+Command ".load" completed successfully, size: 9
+Command ".show" completed successfully, show: 9 messages 
+Command ".del" not found delete id: 23456u message 
+Command ".del" not found delete id: 1234ref message 
+Command ".del" completed successfully, delete id: 1 message 
+Command ".show" completed successfully, show: 8 messages 
+Command ".help"
+Command ".search.a" Can't found
+Command ".search.a" completed successfully, found: 2 messages 
+-------
+Session statistic: Delete: 1 messages | Add: 2 messages
+End GRACHCHAT 
