@@ -372,3 +372,49 @@ Command ".load" completed successfully, size: 9
 -------
 Session statistic: Delete: 0 messages | Add: 0 messages
 End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-23 21:13:40.524
+
+".ezit" is not recognized as an internal or external command, operable program or batch file. 
+-------
+Session statistic: Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-23 21:13:50.058
+
+-------
+Session statistic: Delete: 0 messages | Add: 0 messages
+End GRACHCHAT 
+---------------------------------------
+Start GRACHCHAT 2016-02-23 21:13:54.991
+
+"sgf" is not recognized as an internal or external command, operable program or batch file. 
+Command ".search.a" Can't found
+Command ".search.w" Can't found
+Command ".load" completed successfully, size: 9
+Command ".show" completed successfully, show: 9 messages 
+Command ".search.w"
+Wrong reg: *a Can't found
+".sa" is not recognized as an internal or external command, operable program or batch file. 
+Command ".add" completed successfully, add id: 13 message 
+Command ".add" completed successfully, add id: 14 message 
+"" is not recognized as an internal or external command, operable program or batch file. 
+Command ".search.a" Can't found
+"" is not recognized as an internal or external command, operable program or batch file. 
+Command ".add"
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name!  completed successfully, add id: 15 message 
+Command ".add"
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name! 
+ warning! Empty name!  completed successfully, add id: 16 message 
+"" is not recognized as an internal or external command, operable program or batch file. 
+Command ".show" completed successfully, show: 13 messages 
+-------
+Session statistic: Delete: 0 messages | Add: 4 messages
+End GRACHCHAT 
