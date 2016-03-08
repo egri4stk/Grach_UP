@@ -3,114 +3,35 @@
     <head lang="en">
     <meta charset="UTF-8">
     <title>GRACHAT</title>
+    <script src="chatScript.js"></script>
     <link rel="stylesheet" href="css/style.css"/>
-</head>
-<body>
-    <div class = "all">
-    
-        <div class = "top">
-            
-            <img src = "images/logo.jpg" class = "img">
-          
 
+</head>
+<body onload = "run()">
+    <div class = "all">
+        <div class = "top">
+            <img src = "images/logo.jpg" class = "img">
             <div class = "inputName">
-                <input id = "currentName" type = "text" class = "input" placeholder = "Введите имя...">
-                <button id = "nameButton" type = "button" class = "button">Add</button>
+                <input id = "nameInput" type = "text" class = "input" value = "Egor">
+                <button type = "button" class = "changeButton">Change</button>
             </div>
         </div>
          <div class = "content">
             <div class ="chatBox">
-                
-
-                <div class="myMess">
-                    <div class ="info">
-                        Admin 12:35
-                        <button id = "del1" type = "button" class = "delButton"></button>
-                        <button id = "ed1" type = "button" class = "editButton"></button>
-                    </div>
-                    <div class ="Message"> ХАЙ , как ваша жизнь,
-                    что рассаажите, мне оч интересно, дааааа </div>
-                </div>
-               
-                <div class="userMess">
-                     <div class ="infoU">
-                        
-                        
-                       (ред.) Vlad 12:36
-                    </div>
-                    <i class ="Message"> Да все путем </i>
-
-                </div>  
-                <div class="myMess">
-                    <div class ="info">
-                        Admin 12:37
-                        <button id = "del1" type = "button" class = "delButton"></button>
-                        <button id = "ed1" type = "button" class = "editButton"></button>
-                    </div>
-                    <div class ="Message"> Что серьезно? Все так гладко? </div>
-                </div>
-               <div class="userMess">
-                     <div class ="infoU">
-                        
-                        
-                        Vlad 12:39
-                    </div>
-                    <div class ="Message"> Ну, были проблемы с законом, перешел дорогу на красный, но все теперь хорошо, не парься </div>
-
-                </div>  
-                 <div class="myMess">
-                    <div class ="info" id="userInfo">
-                        Admin 12:40
-                        <button id = "del1" type = "button" class = "delButton"></button>
-                        <button id = "ed1" type = "button" class = "editButton"></button>
-                    </div>
-                    <div class ="Message"> АХАХАХАХА, дали 1 базовую?_))))) </div>
-                </div>
-
-                <div class="userMess">
-                     <div class ="infoU">
-                        
-                        
-                        Vlad 12:42
-                    </div>
-                    <div class ="Message"> Да, хотя я вообще не согласен, там был уже почти зеленый, мне остовалось буквально 5 секунд подождать, изи 1 базовая на дороге
-                    не валяется) Ладно, я пошел, давай, бб </div>
-
-                </div>  
-                 <div class="myMess">
-                    <div class ="info" id="userInfo">
-                        Admin 12:44
-                        <button id = "del1" type = "button" class = "delButton"></button>
-                        <button id = "ed1" type = "button" class = "editButton"></button>
-                    </div>
-                    <div class ="Message"> Удачи, уголовничек ) </div>
-                </div>
-                 <div class="userMess">
-                     <div class ="infoU">
-                                  
-                       (удалено)    Vlad 12:50 
-                    </div>
-                    <s class ="Message">пока, плохой кодер </s>
-
-                </div>  
-
+                <ul class="items" id="list">
+            </ul>
 
             </div>
-           
             <div class = "inputMessage">
-              Current user: Admin
-                
+            
                 <div class ="add">
                 <input id = "fieldMessage" type = "text"  placeholder = "Введите cообщение...">
-                <button id = "enter" type = "button" class = "button"></button>
+                <button type = "button" class = "mesButton"></button>
                  </div>
-                
-
             </div>
          </div>
          <div class="status">
-
-         <img src = "images/warning.png" id="warning" >
+                <img src = "images/warning.png" id="warning" >
          </div>
     </div>
 </body>

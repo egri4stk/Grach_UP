@@ -54,85 +54,8 @@ body{
   border-radius: 2px;
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
 }
-.button {
-  width: 30%;
-  height: 95%;
-  padding: 6px 16px 7px 16px;
-  font-size: 11px;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
-  line-height: 13px;
-  background-color: #666769;
-  color: #FFF;
-  border: 0;
-  border-radius: 2px;
- 
-}
 
-.delButton{
-  width: 20px;
-  height: 20px;
-  
-  background-image: url(../images/delete.png);
-  background-size: cover;
-  
-  
-}
-.editButton{
-  width: 20px;
-  height: 20px;
-  background-image: url(../images/edit.png);
-  background-size: cover;
- 
- 
-}
-
-
-#del1{
-float: right;
-margin-left: 5px;
-}
-#ed1{
-float: right;
-}
-.myMess{
-  word-wrap: break-word;
-  margin: 6px 55% 6px 6px;
-  padding: 4px 4px 4px 4px;
-  
-  background-color: rgba(127,127,127,0.3);
-}
-.userMess{
-  word-wrap: break-word;
-  margin: 6px 6px 6px 55%;
-  padding: 4px 4px 4px 4px;
-  text-align: left;
-  background-color: rgba(127,127,127,0.3);
-}
-.info{
-  font-weight: 600;
-}
-.infoU{
- text-align: right;
- font-weight: 600;
-
-}
-.Message{
-  padding: 3px 3px 3px 3px;
-}
-.button:hover{
-  box-shadow:
- 0px 1px 1px rgba(255,255,255,0.8) inset,
- 1px 1px 1px rgba(0,0,0,0.4);
-}
-
-.inputName #nameButton{
-  font-size: 70%;
-}
 .content{
-  
   width: 50%;
   height: 500px;
   margin: auto;
@@ -140,7 +63,6 @@ float: right;
   background-color: rgba(83,83,83,0.8);
 }
 .chatBox{
-
   text-align: left;
   background-color: rgba(232,232,237,0.9);
   overflow: auto;
@@ -156,15 +78,8 @@ float: right;
   width: 85%;
   height: 10%;
   text-align: left;
-  
   font-weight: 600;
   color: #C4C4C4;
-}
-.inputMessage #userImage{
-  
-  border-radius: 10%;
-  height: 10%;
-  width: 10%;
 }
 .add {
   width: 95%;
@@ -175,7 +90,6 @@ float: right;
 
   height: 90%;
   width: 70%;
- 
   font-size: 11px;
   display: inline-block;
   line-height: 20px;
@@ -185,29 +99,7 @@ float: right;
   border-radius: 2px;
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
 }
-.add #enter{
-  width: 30px;
-  height:30px;
-  background-image: url(../images/enter.png);
-  background-size: cover;
-  
 
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
-
- 
-}
-.userName{
-  width: 90%;
-  height: 40%;
-  text-align: left;
-  
-  font-weight: 600;
-  color: #C4C4C4;
-
-}
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -233,7 +125,6 @@ float: right;
   word-wrap: break-word;
   text-align: right;
 
-
 }
 .status #warning{
   margin-right: 20%;
@@ -242,3 +133,152 @@ float: right;
   width: 7%;
   
 }
+.items {
+  width: 95%;
+  padding-left: 0;
+  margin-top: 0; 
+  padding-top: 8px;
+}
+
+.item {
+  font-size: 15px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 1%;
+  width: 70%;
+  text-align: left;
+  padding: 7px;
+  border: 0;
+  border-radius: 10px;
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+  background-color: rgba(83,83,83,0.3);
+  color: #FFF;
+  word-wrap: break-word;
+  float: left;
+  clear: both;
+  box-shadow:
+  5px 5px 5px rgba(0,0,0,0.4);
+}
+.changeButton{
+  width: 30%;
+  height: 95%;
+  padding: 6px 16px 7px 16px;
+  font-size: 70%;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+  line-height: 13px;
+  background-color: #4B2C5F;
+  color: #FFF;
+  border: 0;
+  border-radius: 2px;
+}
+.changeButton:hover{
+  box-shadow:
+ 0px 1px 1px rgba(255,255,255,0.8) inset,
+ 1px 1px 1px rgba(0,0,0,0.4);
+}
+.mesButton{
+ 
+  padding: 6px 16px 7px 16px;
+  font-size: 70%;
+  line-height: 13px;
+  background-color: #4B2C5F;
+  color: #FFF;
+  border: 0;
+  border-radius: 2px;
+  width: 30px;
+  height:30px;
+  background-image: url(../images/enter.png);
+  background-size: cover;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans; 
+}
+.mesButton:hover{
+  box-shadow:
+ 0px 1px 1px rgba(255,255,255,0.8) inset,
+ 1px 1px 1px rgba(0,0,0,0.4);
+}
+.del{
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/delete.png);
+  background-size: cover;
+  padding: 6px;
+  margin: 5px;
+  font-size: 11px;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+  line-height: 13px;
+  background-color: #4B2C5F;
+  color: #FFF;
+  border: 0;
+  border-radius: 2px;
+
+}
+.edit{
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  background-image: url(../images/edit.png);
+  background-size: cover;
+  padding: 6px;
+  font-size: 11px;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+  line-height: 13px;
+  background-color: #4B2C5F;
+  color: #FFF;
+  border: 0;
+  border-radius: 2px;
+}
+.time {
+  
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+  font-size: 17px;
+  color: #4B2C5F;
+  font-weight: 900;
+  float: left;  
+  clear: both;
+
+}
+.myName {
+  width: 50%;
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+  font-size: 17px;
+  color: #4B2C5F;
+  font-weight: 900;
+  float: left;  
+  clear: both;
+}
+.deletedMes {
+  text-align: left;
+  padding: 7px;
+  border: 0;
+  border-radius: 10px;
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+  font-size: 15px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width: 30%;
+  margin-left: 1%;
+  background-color: rgba(150,150,150, 0.8);
+  color: white;
+  word-wrap: break-word;
+  float: left;
+  clear: both;
+  box-shadow:
+  5px 5px 5px rgba(0,0,0,0.4);
+}
+
+li {
+  list-style-type: none;
+}
+
