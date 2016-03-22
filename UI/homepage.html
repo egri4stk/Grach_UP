@@ -11,27 +11,30 @@
     <div class = "all">
         <div class = "top">
             <img src = "images/logo.jpg" class = "img">
+            <img src = "images/warning.png" class = "img" id ="warning" >
             <div class = "inputName">
-                <input id = "nameInput" type = "text" class = "input" value = "Egor">
+                <input id = "nameInput" type = "text" class = "input" value = "Anonymous">
                 <button type = "button" class = "changeButton">Change</button>
             </div>
         </div>
          <div class = "content">
-            <div class ="chatBox">
+            <div class ="chatBox" id="chat">
                 <ul class="items" id="list">
             </ul>
 
             </div>
             <div class = "inputMessage">
-            
+                <div  id="current"> 
+                    Anonymous
+                </div>
                 <div class ="add">
-                <input id = "fieldMessage" type = "text"  placeholder = "Введите cообщение...">
-                <button type = "button" class = "mesButton"></button>
-                 </div>
+                    <input class = "fieldMessage" id = "fieldMessage" type = "text"  placeholder = "Введите cообщение...">
+                    <button type = "button" class = "mesButton"></button>
+                </div>
             </div>
          </div>
-         <div class="status">
-                <img src = "images/warning.png" id="warning" >
+         <div class="podval">
+                
          </div>
     </div>
 </body>

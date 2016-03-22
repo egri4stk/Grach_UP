@@ -16,12 +16,15 @@ body{
   
 }
 .img {
-  
   height: 10%;
   width: 10%;
+  border-radius: 10px;
  
 }
-
+#warning{
+  height: 3%;
+  width: 3%;
+}
 .top{
   height: 20%;
   width: 100%;
@@ -64,7 +67,7 @@ body{
 }
 .chatBox{
   text-align: left;
-  background-color: rgba(232,232,237,0.9);
+  background-color: rgba(83,83,83,0.7);
   overflow: auto;
   width: 100%;
   height: 80%;
@@ -72,18 +75,42 @@ body{
 }
 .inputMessage{
   font-size: 100%;
+  padding-top: 2%;
   text-align: left;
+  width: 95%;
   margin: auto;
-  padding: 2% 0 0 2%;
-  width: 85%;
-  height: 10%;
+  height: 15%;
   text-align: left;
   font-weight: 600;
   color: #C4C4C4;
 }
-.add {
+.inputMessageEdit{
+  font-size: 100%;
+  padding-top: 2%;
+  text-align: left;
   width: 95%;
-  height: 60%; 
+  margin: auto;
+  height: 15%;
+  text-align: left;
+  font-weight: 600;
+  color: #C4C4C4;
+}
+#current{
+  word-wrap: break-word;
+  width: 50%;
+  height: 30%;
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+  font-size: 17px;
+  color: #E667AF;
+  font-weight: 900;
+  float: left;  
+  clear: both;
+}
+
+.add {
+  padding-top: 5px;
+  width: 95%;
+  height: 50%; 
 
 }
 .add #fieldMessage{
@@ -112,31 +139,21 @@ body{
 
 ::-webkit-scrollbar-thumb:vertical{
   height: 5px;
-  background-color: #632863;
+  background-color: #E667AF;
   -webkit-border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:horizontal{
   width: 5px;
-  background-color: #632863;
+  background-color: #E667AF;
   -webkit-border-radius: 5px;
 }
-.status{
-  word-wrap: break-word;
-  text-align: right;
 
-}
-.status #warning{
-  margin-right: 20%;
-  
-  height: 7%;
-  width: 7%;
-  
-}
 .items {
   width: 95%;
   padding-left: 0;
   margin-top: 0; 
+
   padding-top: 8px;
 }
 
@@ -151,7 +168,7 @@ body{
   border: 0;
   border-radius: 10px;
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
-  background-color: rgba(83,83,83,0.3);
+  background-color: rgba(150,150,150, 0.8);
   color: #FFF;
   word-wrap: break-word;
   float: left;
@@ -169,7 +186,7 @@ body{
   outline: none;
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
   line-height: 13px;
-  background-color: #4B2C5F;
+  background-color: #E667AF;
   color: #FFF;
   border: 0;
   border-radius: 2px;
@@ -179,16 +196,17 @@ body{
  0px 1px 1px rgba(255,255,255,0.8) inset,
  1px 1px 1px rgba(0,0,0,0.4);
 }
+
 .mesButton{
  
   padding: 6px 16px 7px 16px;
   font-size: 70%;
   line-height: 13px;
-  background-color: #4B2C5F;
+  background-color: rgba(83,83,83,0.1);
   color: #FFF;
   border: 0;
   border-radius: 2px;
-  width: 30px;
+  width: 70px;
   height:30px;
   background-image: url(../images/enter.png);
   background-size: cover;
@@ -215,7 +233,7 @@ body{
   outline: none;
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
   line-height: 13px;
-  background-color: #4B2C5F;
+  background-color: rgba(83,83,83,0);
   color: #FFF;
   border: 0;
   border-radius: 2px;
@@ -234,30 +252,67 @@ body{
   outline: none;
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
   line-height: 13px;
-  background-color: #4B2C5F;
+  background-color: rgba(83,83,83,0);
   color: #FFF;
   border: 0;
   border-radius: 2px;
 }
+.inputEdit{
+  font-size: 100%;
+  text-align: left;
+  margin: auto;
+  padding: 2% 0 0 2%;
+  width: 85%;
+  height: 10%;
+  text-align: left;
+  font-weight: 600;
+  color: #C4C4C4;
+}
+.cancel{
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  background-image: url(../images/cancel.png);
+  background-size: cover;
+  padding: 6px;
+  font-size: 11px;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+  line-height: 13px;
+  background-color: rgba(83,83,83,0);
+  color: #FFF;
+  border: 0;
+  border-radius: 2px;
+}
+
 .time {
   
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
   font-size: 17px;
-  color: #4B2C5F;
+  color: white;
   font-weight: 900;
-  float: left;  
+   
   clear: both;
+
+  float: left;  
 
 }
 .myName {
   width: 50%;
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
   font-size: 17px;
-  color: #4B2C5F;
+  color: white;
   font-weight: 900;
   float: left;  
   clear: both;
 }
+.textMessage{
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+  float: left; 
+}
+
 .deletedMes {
   text-align: left;
   padding: 7px;
@@ -269,7 +324,7 @@ body{
   margin-bottom: 1%;
   width: 30%;
   margin-left: 1%;
-  background-color: rgba(150,150,150, 0.8);
+  background-color: rgba(83,83,83, 0.8);
   color: white;
   word-wrap: break-word;
   float: left;
@@ -277,8 +332,34 @@ body{
   box-shadow:
   5px 5px 5px rgba(0,0,0,0.4);
 }
+.delText{
+  
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+  font-size: 13px;
+  color: #E667AF;
+  font-weight: 600;
+  float: left;  
+  
+}
+.editText{
+  
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+  font-size: 12px;
+  color: #E667AF;
+  font-weight: 600;
+  float: left;  
+  
+}
 
 li {
   list-style-type: none;
 }
-
+.podval{
+  height: 20%;
+  width: 100%;
+  text-align: left;
+  margin:0 auto;
+  padding-left: 20%;
+  font-size: 300%;
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+}
