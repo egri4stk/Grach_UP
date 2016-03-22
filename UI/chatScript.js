@@ -13,11 +13,10 @@ function run(){
 	var currentUser = document.getElementById('current');
    	currentUser.innerHTML = username;
    	
-   	mesHistory = loadHistory() || [newMessage('Hi')];
+   	mesHistory = loadHistory() || [newMessage('first message')];
    	id = mesHistory[mesHistory.length - 1].idi;
    	updateHistory(mesHistory);
-   	var content = document.getElementById("chat")
-	content.scrollTop +=9999;
+   	fixScroll();	
 }
 
 function delegateMessage(evtObj) {
@@ -29,110 +28,44 @@ function delegateMessage(evtObj) {
 		sendMessage(evtObj);
 	}
 }
-
-function changeName() {
-	var input = document.getElementById('nameInput');
-    var name = document.getElementsByClassName('myName');
-    var delBtn = document.getElementsByClassName('del');
-    var editBtn = document.getElementsByClassName('edit');
-   	var messages = document.getElementsByClassName('item');
-    var editInput = document.getElementsByClassName('In');
-    var btnCancel = document.getElementsByClassName('cancel');
-    var delStatus = document.getElementsByClassName('delText');
-    
-   	
-   	var tempUsername ="";
-   	tempUsername= input.value;
-   	username = tempUsername.replace(/(^\s+|\s+$)/g,'');
-   	
-   	if(username==""){
-   		username="Anonymous";
-   		input.value="Anonymous";
-   	}
-   	var currentUser = document.getElementById('current');
-   	currentUser.innerHTML = username;
-   	saveUsername(username);
-   	
-   	for(var i=0; i< editInput.length; i++){
-   		editInput[i].hidden = true;
-   	}
-   	for(var i=0; i< btnCancel.length; i++){
-   		btnCancel[i].style.display = 'none';
-   		
-   	}
-   	
-   	
-   	for(var i=0; i < messages.length; i++ ){
-   		if(name[i].innerHTML!=username){
-   		 	delBtn[i].style.display = 'none';	
-   			editBtn[i].style.display = 'none';	
-   	    }
-   	    else{
-			if(delStatus[i].innerHTML!="Удалено"){
-			delBtn[i].style.display = 'inline';	
-   			editBtn[i].style.display = 'inline';
-   			}	  			
-   	    }
-   	}
-
-}
-
-function sendMessage() {
-	var todoText = document.getElementById('fieldMessage');
-	var divItem = document.createElement('li');
-	var divName = document.createElement('li');
+function showHistory(message){
+	var divBox = document.createElement('li');
+	var divItem = document.createElement('div');
+	var divName = document.createElement('div');
 	var textName = document.createElement('div');
 	var text = document.createElement('div');
 	var time = document.createElement('div');
-	var but1 = document.createElement('button');
-	var but2 = document.createElement('button');
+	var btnDel = document.createElement('button');
+	var btnEdit = document.createElement('button');
 	var input = document.createElement('input');
    	var btnCancel = document.createElement('button');
    	var delStatus = document.createElement('div');
 	var editStatus = document.createElement('div');
-	
-	but1.classList.add('del');
-	but2.classList.add('edit');
+
+	btnDel.classList.add('del');
+	btnEdit.classList.add('edit');
 	btnCancel.classList.add('cancel');
 	time.classList.add('time');
 	divItem.classList.add('item');
+	
 	textName.classList.add('myName');
 	delStatus.classList.add('delText');
 	editStatus.classList.add('editText');
 	input.classList.add('inputMessage');
-	
 
 	time.setAttribute('id', 't');
-	divItem.setAttribute('id', 'divId' + id);
-	text.setAttribute('id', 'textDiv' + id);
-	delStatus.setAttribute('id', 'textDel' + id);
-	editStatus.setAttribute('id', 'textEdit' + id);
-	input.setAttribute('id', 'textIn' + id);
+	divItem.setAttribute('id', 'divId' + message.idi);
+	text.setAttribute('id', 'textDiv' + message.idi);
+	delStatus.setAttribute('id', 'textDel' + message.idi);
+	editStatus.setAttribute('id', 'textEdit' + message.idi);
+	input.setAttribute('id', 'textIn' + message.idi);
 	input.setAttribute('class', 'In');
-	but1.setAttribute('id','del' + id);
-    but2.setAttribute('id','red' + id);
-    btnCancel.setAttribute('id','cancel' + id);
-	
-  	delStatus.innerHTML="";
-  	editStatus.innerHTML="";
-	var str = new String(id);
-	text.innerHTML = todoText.value;
-	textName.innerHTML = username;
-	time.textContent = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
-
-	but1.addEventListener('click', function(){
-		deleteMessage(str);
-	});
-
-	but2.addEventListener('click', function(){
-		changeMessage(str);
-	});
-	btnCancel.addEventListener('click',function(){
-		cancelEditMessage(str);
-	});
-	
-	divItem.appendChild(but1);
-	divItem.appendChild(but2);
+	btnDel.setAttribute('id','del' + message.idi);
+    btnEdit.setAttribute('id','red' + message.idi);
+    btnCancel.setAttribute('id','cancel' + message.idi);
+    
+    divItem.appendChild(btnDel);
+	divItem.appendChild(btnEdit);
 	divItem.appendChild(input);
 	divItem.appendChild(btnCancel);
 	divItem.appendChild(text);
@@ -140,49 +73,89 @@ function sendMessage() {
 	divItem.appendChild(editStatus);
 	divName.appendChild(textName);
 	divName.appendChild(time);
-
-	
 	input.hidden = true;
-	
-	btnCancel.style.display = 'none';	
-
-	if(todoText.value != "") {
-		document.getElementById('list').appendChild(divName);
-		document.getElementById('list').appendChild(divItem);
-	}
-
-	todoText.value = "";
-	id++;
-	var content = document.getElementById("chat")
-	content.scrollTop +=9999;
-}
-
-
-function deleteMessage(id) {
-	var text = document.getElementById('textDiv' + id);
-	var delStatus = document.getElementById('textDel' + id);
-	var input = document.getElementById('textIn' + id);
-	var btnCancel = document.getElementById('cancel'+id);
-	var btnEdit = document.getElementById('del'+id);
-	var btnDel = document.getElementById('red'+id);
-	var item = document.getElementById('divId'+id);
-	var editStatus = document.getElementById('textEdit' + id);
-	text.innerHTML="";
 	btnCancel.style.display = 'none';
-	btnEdit.style.display = 'none';
-	btnDel.style.display = 'none';
-	delStatus.innerHTML="Удалено";
-	item.classList.add('deletedMes');
-	editStatus.innerHTML="";
+	divBox.appendChild(divName);
+	divBox.appendChild(divItem);	
+	document.getElementById('list').appendChild(divBox);
+
+    
+	if(message.deleted==true){
+    	delStatus.innerHTML="Удалено";
+    	btnDel.style.display = 'none';	
+   		btnEdit.style.display = 'none';
+   		divItem.classList.add('deletedMes');
+	}
+  	else{
+  		if(message.edited==true){
+  		editStatus.innerHTML = "edited";
+  			message.edited==false;
+  		}
+  		if(message.name != username){
+  			btnDel.style.display = 'none';	
+   			btnEdit.style.display = 'none';
+  		}
+  	}
+	
+	textName.innerHTML = message.name;
+	time.innerHTML = message.time;
+	text.innerHTML = message.text;
+	
+	btnDel.addEventListener('click', function(){
+		deleteMessage(message);
+	});
+
+	btnEdit.addEventListener('click', function(){
+		changeMessage(message);
+	});
+	btnCancel.addEventListener('click',function(){
+		cancelEditMessage(message);
+	});
+		
 }
 
-function changeMessage(id) {
-	var text = document.getElementById('textDiv' + id);
-	var input = document.getElementById('textIn' + id);
-	var btnCancel = document.getElementById('cancel'+id);
-	var editStatus = document.getElementById('textEdit' + id);
-	input.value = text.innerHTML ;
-     
+function changeName() {
+	var input = document.getElementById('nameInput'); 	
+    var tempUsername ="";
+   	tempUsername= input.value;
+   	username = tempUsername.replace(/(^\s+|\s+$)/g,'');
+   	var currentUser = document.getElementById('current');
+   	currentUser.innerHTML = username;
+   	if(username==""){
+   		username="Anonymous";
+   		input.value="Anonymous";
+   		currentUser.innerHTML = "Anonymous";
+   	}
+    saveUsername(username);
+    updateHistory(mesHistory);
+    
+
+}
+
+function sendMessage() {
+	var inputText = document.getElementById('fieldMessage');
+	var str = inputText.value;
+	if(str != "") {
+    	mesHistory.push(newMessage(str));
+    	updateHistory(mesHistory);
+    	inputText.value = "";
+    }
+	fixScroll();	
+}
+
+
+function deleteMessage(message) {
+	message.text = "";
+	message.deleted = true;
+	updateHistory(mesHistory);	
+}
+
+function changeMessage(message) {
+	
+	var input = document.getElementById('textIn' + message.idi);
+	var btnCancel = document.getElementById('cancel'+message.idi);
+
+	input.value = message.text.replace(/(^\s+|\s+$)/g,'') ;
 	input.hidden = false;
 	btnCancel.style.display = 'inline';	
 
@@ -192,21 +165,23 @@ function changeMessage(id) {
    			tempMes= input.value;
    			var mes="";
    			mes = tempMes.replace(/(^\s+|\s+$)/g,'');
-			if(mes!="" && mes!=text.innerHTML){
-			text.innerHTML = mes ;
-			editStatus.innerHTML = "edit:" + new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
-				}
+			if(mes!="" && mes!=message.text){
+				message.text = mes;
+				message.edited=true;
+				updateHistory(mesHistory);
+				
+			}
 			input.hidden = true;
-			btnCancel.style.display = 'none';	
-			
+			btnCancel.style.display = 'none';
+				
 		}
 	});		
 }
-function cancelEditMessage(id){
-  	var k = document.getElementById('divId' + id);
-	var text = document.getElementById('textDiv' + id);
-	var input = document.getElementById('textIn' + id);
-	var btnCancel = document.getElementById('cancel'+id);
+function cancelEditMessage(message){
+  	var k = document.getElementById('divId' + message.idi);
+	var text = document.getElementById('textDiv' + message.idi);
+	var input = document.getElementById('textIn' + message.idi);
+	var btnCancel = document.getElementById('cancel'+ message.idi);
 			input.hidden = true;
 			btnCancel.style.display = 'none';
 
@@ -219,7 +194,8 @@ function newMessage(text) {
         idi: id,
         text: text,
         time: new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1"),
-        deleted: false
+        deleted: false,
+        edited: false
     };
 }
 function loadUsername() {
@@ -264,4 +240,7 @@ function updateHistory(messageHistory) {
     }
     saveHistory(mesHistory);
 }
-
+function fixScroll(){
+	var content = document.getElementById("chat")
+	content.scrollTop +=9999;
+}

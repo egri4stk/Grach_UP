@@ -290,10 +290,10 @@ body{
 .time {
   
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
-  font-size: 17px;
+  font-size: 12px;
   color: white;
-  font-weight: 900;
-   
+  font-weight: 600;
+  padding-left: 7px; 
   clear: both;
 
   float: left;  
@@ -303,6 +303,7 @@ body{
   width: 50%;
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
   font-size: 17px;
+  padding-left: 7px; 
   color: white;
   font-weight: 900;
   float: left;  
