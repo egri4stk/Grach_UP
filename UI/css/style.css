@@ -168,7 +168,7 @@ body{
   border: 0;
   border-radius: 10px;
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
-  background-color: rgba(150,150,150, 0.8);
+  background-color: rgba(83,83,83, 0.8);
   color: #FFF;
   word-wrap: break-word;
   float: left;
@@ -239,6 +239,17 @@ body{
   border-radius: 2px;
 
 }
+.del:hover {
+  box-shadow:
+ 1px 1px 1px rgba(255,255,255,0.4) inset,
+ 1px 1px 1px rgba(0,0,0,0.4);
+}
+
+.del:active {
+ box-shadow:
+ 0px 0px 1px rgba(0,0,0,0.5) inset,
+ 3px 3px 5px rgba(0,0,0,0.5);
+}
 .edit{
   width: 20px;
   height: 20px;
@@ -256,6 +267,17 @@ body{
   color: #FFF;
   border: 0;
   border-radius: 2px;
+}
+.edit:hover {
+  box-shadow:
+ 1px 1px 1px rgba(255,255,255,0.4) inset,
+ 1px 1px 1px rgba(0,0,0,0.4);
+}
+
+.edit:active {
+ box-shadow:
+ 0px 0px 1px rgba(0,0,0,0.5) inset,
+ 3px 3px 5px rgba(0,0,0,0.5);
 }
 .inputEdit{
   font-size: 100%;
@@ -286,7 +308,17 @@ body{
   border: 0;
   border-radius: 2px;
 }
+.cancel:hover {
+  box-shadow:
+ 1px 1px 1px rgba(255,255,255,0.4) inset,
+ 1px 1px 1px rgba(0,0,0,0.4);
+}
 
+.cancel:active {
+ box-shadow:
+ 0px 0px 1px rgba(0,0,0,0.5) inset,
+ 3px 3px 5px rgba(0,0,0,0.5);
+}
 .time {
   
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
@@ -295,18 +327,20 @@ body{
   font-weight: 600;
   padding-left: 7px; 
   clear: both;
-
+  display: inline-block;
   float: left;  
+
 
 }
 .myName {
-  width: 50%;
+  width: auto;
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
   font-size: 17px;
   padding-left: 7px; 
   color: white;
   font-weight: 900;
   float: left;  
+  display: inline-block;
   clear: both;
 }
 .textMessage{
@@ -325,7 +359,7 @@ body{
   margin-bottom: 1%;
   width: 30%;
   margin-left: 1%;
-  background-color: rgba(83,83,83, 0.8);
+  background-color: rgba(50,50,50, 0.8);
   color: white;
   word-wrap: break-word;
   float: left;

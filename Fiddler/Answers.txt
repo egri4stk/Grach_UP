@@ -1,0 +1,6 @@
+HTTP/1.1 200 OK
+Date: Tue, 29 Mar 2016 19:38:50 GMT
+Access-control-allow-origin: *
+Content-length: 65
+
+{"messages":["Hello bro","go play dota2","mm?"],"token":"TN35EN"}

@@ -16,7 +16,7 @@ function run(){
    	mesHistory = loadHistory() || [newMessage('first message')];
    	id = mesHistory[mesHistory.length - 1].idi;
    	updateHistory(mesHistory);
-   	fixScroll();	
+   	fixScroll();		
 }
 
 function delegateMessage(evtObj) {
@@ -47,7 +47,7 @@ function showHistory(message){
 	btnCancel.classList.add('cancel');
 	time.classList.add('time');
 	divItem.classList.add('item');
-	
+	divName.classList.add('divBox')
 	textName.classList.add('myName');
 	delStatus.classList.add('delText');
 	editStatus.classList.add('editText');
