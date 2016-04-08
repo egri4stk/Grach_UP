@@ -80,3 +80,4 @@
 2016-03-29 19:41:07.953: [by.bsu.up.chat.client.Client] Message from server: 2
 2016-03-29 19:41:08.954: [by.bsu.up.chat.client.Client] Message from server: gf
 2016-03-29 19:41:10.972: [by.bsu.up.chat.client.Client] Message from server: ytdf
+2016-04-08 17:01:45.098: [by.bsu.up.chat.client.Client] Connection error. Disconnecting...
