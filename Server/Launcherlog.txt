@@ -252,3 +252,19 @@
 2016-04-15 21:49:51.187: [by.bsu.up.chat.Launcher] Server started.
 2016-04-15 21:49:51.195: [by.bsu.up.chat.Launcher] Get list of messages: GET http://192.168.0.101:8080/chat?token={token}
 2016-04-15 21:49:51.196: [by.bsu.up.chat.Launcher] Send message: POST http://192.168.0.101:8080/chat provide body json in format {"id" : "1", "author":"User1", "text":"Hello, all!", "timestamp":1459169330000}
+2016-04-15 22:00:48.861: [by.bsu.up.chat.Launcher] Starting server on localhost...
+2016-04-15 22:00:48.932: [by.bsu.up.chat.Launcher] Server started.
+2016-04-15 22:00:48.941: [by.bsu.up.chat.Launcher] Get list of messages: GET http://192.168.0.101:8080/chat?token={token}
+2016-04-15 22:00:48.943: [by.bsu.up.chat.Launcher] Send message: POST http://192.168.0.101:8080/chat provide body json in format {"id" : "1", "author":"User1", "text":"Hello, all!", "timestamp":1459169330000}
+2016-04-15 22:08:45.127: [by.bsu.up.chat.Launcher] Starting server on localhost...
+2016-04-15 22:08:45.204: [by.bsu.up.chat.Launcher] Server started.
+2016-04-15 22:08:45.213: [by.bsu.up.chat.Launcher] Get list of messages: GET http://192.168.0.101:8080/chat?token={token}
+2016-04-15 22:08:45.216: [by.bsu.up.chat.Launcher] Send message: POST http://192.168.0.101:8080/chat provide body json in format {"id" : "1", "author":"User1", "text":"Hello, all!", "timestamp":1459169330000}
+2016-04-15 22:09:15.63: [by.bsu.up.chat.Launcher] Starting server on localhost...
+2016-04-15 22:09:15.703: [by.bsu.up.chat.Launcher] Server started.
+2016-04-15 22:09:15.711: [by.bsu.up.chat.Launcher] Get list of messages: GET http://192.168.0.101:8080/chat?token={token}
+2016-04-15 22:09:15.713: [by.bsu.up.chat.Launcher] Send message: POST http://192.168.0.101:8080/chat provide body json in format {"id" : "1", "author":"User1", "text":"Hello, all!", "timestamp":1459169330000}
+2016-04-15 22:09:42.101: [by.bsu.up.chat.Launcher] Starting server on localhost...
+2016-04-15 22:09:42.173: [by.bsu.up.chat.Launcher] Server started.
+2016-04-15 22:09:42.179: [by.bsu.up.chat.Launcher] Get list of messages: GET http://192.168.0.101:8080/chat?token={token}
+2016-04-15 22:09:42.179: [by.bsu.up.chat.Launcher] Send message: POST http://192.168.0.101:8080/chat provide body json in format {"id" : "1", "author":"User1", "text":"Hello, all!", "timestamp":1459169330000}

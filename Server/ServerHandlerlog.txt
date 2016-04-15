@@ -177,3 +177,12 @@
 2016-04-15 21:50:17.126: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{text='ds', timestamp=1460746217123, author='Egor', id='648749116724'}
 2016-04-15 21:50:17.285: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{text='ds', timestamp=1460746217283, author='Egor', id='660900852213'}
 2016-04-15 21:50:17.472: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{text='dsds', timestamp=1460746217469, author='Egor', id='172163342954'}
+2016-04-15 22:01:21.891: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{text='Hi', timestamp=1460746881887, author='Vlad', id='372988356042'}
+2016-04-15 22:01:29.674: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{text='Hiiiiiiii', timestamp=1460746889670, author='Vlad', id='1322639700195'}
+2016-04-15 22:01:32.443: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{text='brooooo', timestamp=1460746892440, author='Vlad', id='869125934963'}
+2016-04-15 22:01:41.69: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{text='РЅСѓ РїСЂРёРІ', timestamp=1460746901682, author='Egor', id='42489308590'}
+2016-04-15 22:02:08.62: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{text='Р“РћР’РќРћ', timestamp=1460746928601, author='Egor', id='801567883341'}
+2016-04-15 22:03:20.686: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{text='hi', timestamp=1460747000610, author='Egor', id='1306038087332'}
+2016-04-15 22:08:55.733: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{text='F', timestamp=1460747335672, author='Egor', id='295799806457'}
+2016-04-15 22:09:50.079: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{text='g', timestamp=1460747390033, author='Egor', id='845106705489'}
+2016-04-15 22:10:02.418: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{text='gergergerg', timestamp=1460747402415, author='Egor', id='536352313023'}

@@ -16,17 +16,14 @@ body{
   
 }
 .img {
-  height: 10%;
-  width: 10%;
+  height: 15%;
+  width: 15%;
   border-radius: 10px;
  
 }
 .warning{
-  height: 10%;
-  width: 10%;
-  border-radius: 10px;
-  height: 3%;
-  width: 3%;
+  height: 7%;
+  width: 7%;
 }
 .top{
   height: 20%;
