@@ -1,7 +1,11 @@
-
+'use strict';
 var username = "";
-var id = 0;
-var mesHistory = [];
+var Application = {
+    mainUrl : 'http://localhost:8080/chat',
+    messageList : [],
+    token : 'TN11EN',
+    isConnected : null
+};
 function run(){
 	var appContainer = document.getElementsByClassName('all')[0];
 	appContainer.addEventListener('click', delegateMessage);
@@ -13,12 +17,15 @@ function run(){
 	var currentUser = document.getElementById('current');
    	currentUser.innerHTML = username;
    	
-   	mesHistory = loadHistory() || [newMessage('first message')];
-   	id = mesHistory[mesHistory.length - 1].idi;
-   	updateHistory(mesHistory);
+   	loadHistory() 
    	fixScroll();		
 }
+function uniqueId() {
+    var date = Date.now();
+    var random = Math.random() * Math.random();
 
+    return Math.floor(date * random).toString();;
+}
 function delegateMessage(evtObj) {
 	if(evtObj.type === 'click' && evtObj.target.classList.contains('changeButton')) {
 		changeName(evtObj);
@@ -54,15 +61,15 @@ function showHistory(message){
 	input.classList.add('inputMessage');
 
 	time.setAttribute('id', 't');
-	divItem.setAttribute('id', 'divId' + message.idi);
-	text.setAttribute('id', 'textDiv' + message.idi);
-	delStatus.setAttribute('id', 'textDel' + message.idi);
-	editStatus.setAttribute('id', 'textEdit' + message.idi);
-	input.setAttribute('id', 'textIn' + message.idi);
+	divItem.setAttribute('id', 'divId' + message.id);
+	text.setAttribute('id', 'textDiv' + message.id);
+	delStatus.setAttribute('id', 'textDel' + message.id);
+	editStatus.setAttribute('id', 'textEdit' + message.id);
+	input.setAttribute('id', 'textIn' + message.id);
 	input.setAttribute('class', 'In');
-	btnDel.setAttribute('id','del' + message.idi);
-    btnEdit.setAttribute('id','red' + message.idi);
-    btnCancel.setAttribute('id','cancel' + message.idi);
+	btnDel.setAttribute('id','del' + message.id);
+    btnEdit.setAttribute('id','red' + message.id);
+    btnCancel.setAttribute('id','cancel' + message.id);
     
     divItem.appendChild(btnDel);
 	divItem.appendChild(btnEdit);
@@ -91,14 +98,14 @@ function showHistory(message){
   		editStatus.innerHTML = "edited";
   			message.edited==false;
   		}
-  		if(message.name != username){
+  		if(message.author != username){
   			btnDel.style.display = 'none';	
    			btnEdit.style.display = 'none';
   		}
   	}
 	
-	textName.innerHTML = message.name;
-	time.innerHTML = message.time;
+	textName.innerHTML = message.author;
+	time.innerHTML = new Date(message.timestamp).toLocaleString();
 	text.innerHTML = message.text;
 	
 	btnDel.addEventListener('click', function(){
@@ -127,33 +134,41 @@ function changeName() {
    		currentUser.innerHTML = "Anonymous";
    	}
     saveUsername(username);
-    updateHistory(mesHistory);
-    
-
+    updateHistory(Application.messageList);
 }
 
 function sendMessage() {
 	var inputText = document.getElementById('fieldMessage');
 	var str = inputText.value;
 	if(str != "") {
-    	mesHistory.push(newMessage(str));
-    	updateHistory(mesHistory);
+		var newMes = newMessage(str);
+    	Application.messageList.push(newMes);
+    	saveMessage(newMes);
     	inputText.value = "";
     }
 	fixScroll();	
 }
-
+function saveMessage(newMessage) {
+    ajax('POST', Application.mainUrl, JSON.stringify(newMessage), function(){
+        updateHistory(Application.messageList);
+    });
+}
 
 function deleteMessage(message) {
-	message.text = "";
-	message.deleted = true;
-	updateHistory(mesHistory);	
+	var thisMes = {
+        id: message.id
+    };
+	ajax('DELETE', Application.mainUrl, JSON.stringify(thisMes), function(){
+        message.deleted = true;
+        message.text = "";
+        updateHistory(Application.messageList);
+    });
 }
 
 function changeMessage(message) {
 	
-	var input = document.getElementById('textIn' + message.idi);
-	var btnCancel = document.getElementById('cancel'+message.idi);
+	var input = document.getElementById('textIn' + message.id);
+	var btnCancel = document.getElementById('cancel'+message.id);
 
 	input.value = message.text.replace(/(^\s+|\s+$)/g,'') ;
 	input.hidden = false;
@@ -168,7 +183,7 @@ function changeMessage(message) {
 			if(mes!="" && mes!=message.text){
 				message.text = mes;
 				message.edited=true;
-				updateHistory(mesHistory);
+				updateHistory(Application.messageList);
 				
 			}
 			input.hidden = true;
@@ -178,22 +193,21 @@ function changeMessage(message) {
 	});		
 }
 function cancelEditMessage(message){
-  	var k = document.getElementById('divId' + message.idi);
-	var text = document.getElementById('textDiv' + message.idi);
-	var input = document.getElementById('textIn' + message.idi);
-	var btnCancel = document.getElementById('cancel'+ message.idi);
+  	var k = document.getElementById('divId' + message.id);
+	var text = document.getElementById('textDiv' + message.id);
+	var input = document.getElementById('textIn' + message.id);
+	var btnCancel = document.getElementById('cancel'+ message.id);
 			input.hidden = true;
 			btnCancel.style.display = 'none';
 
 }
 function newMessage(text) {
-    id++;
 
     return {
-        name: username,
-        idi: id,
+        author: username,
+        id: uniqueId(),
         text: text,
-        time: new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1"),
+        timestamp: new Date().getTime(),
         deleted: false,
         edited: false
     };
@@ -217,30 +231,72 @@ function saveUsername(name) {
 }
 
 function loadHistory() {
-    if(typeof(Storage) == "undefined") {
-		alert('localStorage is not accessible');
-		return;
-	}
-    var item = localStorage.getItem("mesHistory");
-    return item && JSON.parse(item);
+    var url = Application.mainUrl + '?token=' + Application.token;
+
+    ajax('GET', url, null, function(responseText){
+        var json = JSON.parse(responseText);
+        Application.messageList = json.messages;
+        updateHistory(Application.messageList);
+    });
+    if (Application.messageList == null) {
+        Application.messageList = [];
+    }
 }
 
-function saveHistory(messageHistory) {
-    if(typeof(Storage) == "undefined") {
-		alert('localStorage is not accessible');
-		return;
-	}
 
-    localStorage.setItem("mesHistory", JSON.stringify(messageHistory));
-}
 function updateHistory(messageHistory) {
 	document.getElementById('list').innerHTML = "";
-    for (var i = 0; i < mesHistory.length; i++) {
-    	showHistory(mesHistory[i]);
+    for (var i = 0; i < messageHistory.length; i++) {
+    	showHistory(messageHistory[i]);
     }
-    saveHistory(mesHistory);
 }
 function fixScroll(){
 	var content = document.getElementById("chat")
 	content.scrollTop +=9999;
 }
+
+function ajax(method, url, data, continueWith) {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open(method || 'GET', url, true);
+
+        xhr.onload = function () {
+            if (xhr.readyState !== 4)
+                return;
+
+            if(xhr.status != 200) {
+                defaultErrorHandler('Error on the server side, response ' + xhr.status);
+                return;
+            }
+
+            if(isError(xhr.responseText)) {
+                defaultErrorHandler('Error on the server side, response ' + xhr.responseText);
+                return;
+            }
+
+            continueWith(xhr.responseText);
+            Application.isConnected = true;
+        };
+
+        xhr.ontimeout = function () {
+            ServerError();
+        };
+
+        xhr.onerror = function () {
+            ServerError();
+        };
+
+        xhr.send(data);
+    }
+function isError(text) {
+    if(text == "")
+        return false;
+
+    try {
+        var obj = JSON.parse(text);
+    } catch(ex) {
+        return true;
+    }
+
+    return !!obj.error;
+}    

@@ -1,0 +1,87 @@
+﻿2016-03-29 16:25:58.16: [by.bsu.up.chat.client.Client] Message from server: ўЇ ўл 
+2016-03-29 16:26:01.16: [by.bsu.up.chat.client.Client] Message from server: sdfdsf
+2016-03-29 16:26:03.165: [by.bsu.up.chat.client.Client] Message from server: sdfsdf
+2016-03-29 16:26:08.165: [by.bsu.up.chat.client.Client] Message from server: sdfsdfrftghjhk
+2016-03-29 16:26:28.235: [by.bsu.up.chat.client.Client] Message from server: test test EGOR
+2016-03-29 17:12:10.314: [by.bsu.up.chat.client.Client] Connection error. Disconnecting...
+2016-03-29 17:12:35.314: [by.bsu.up.chat.client.Client] Message from server: hello Grach
+2016-03-29 17:12:52.4: [by.bsu.up.chat.client.Client] Message from server: how are u?
+2016-03-29 17:12:57.426: [by.bsu.up.chat.client.Client] Message from server: mmmm????
+2016-03-29 17:13:35.011: [by.bsu.up.chat.client.Client] Message from server: Hello Egorka!
+2016-03-29 17:13:48.066: [by.bsu.up.chat.client.Client] Message from server: MiMiMi
+2016-03-29 17:13:55.103: [by.bsu.up.chat.client.Client] Message from server: go dota!
+2016-03-29 17:30:16.51: [by.bsu.up.chat.client.Client] Message from server: Hello bro
+2016-03-29 17:30:20.52: [by.bsu.up.chat.client.Client] Message from server: go play dota2
+2016-03-29 17:30:23.528: [by.bsu.up.chat.client.Client] Message from server: mm?
+2016-03-29 17:48:29.241: [by.bsu.up.chat.client.Client] Message from server: Hellooooo bro
+2016-03-29 17:48:41.273: [by.bsu.up.chat.client.Client] Message from server: let's go 
+2016-03-29 17:48:45.276: [by.bsu.up.chat.client.Client] Message from server: kekeke
+2016-03-29 17:48:51.338: [by.bsu.up.chat.client.Client] Connection error. Disconnecting...
+2016-03-29 17:49:35.003: [by.bsu.up.chat.client.Client] Message from server: Hello grach
+2016-03-29 17:49:41.044: [by.bsu.up.chat.client.Client] Message from server: h a u?
+2016-03-29 17:49:48.058: [by.bsu.up.chat.client.Client] Message from server: ama normas
+2016-03-29 17:52:43.888: [by.bsu.up.chat.client.Client] Message from server: Hello Grach
+2016-03-29 17:52:57.919: [by.bsu.up.chat.client.Client] Message from server: May be u have some Mary?
+2016-03-29 17:54:37.401: [by.bsu.up.chat.client.Client] Message from server: ewfwefewfewfewf
+2016-03-29 17:54:38.401: [by.bsu.up.chat.client.Client] Message from server: ewf
+2016-03-29 18:06:33.557: [by.bsu.up.chat.client.Client] Message from server: Hello Composer
+2016-03-29 18:06:35.56: [by.bsu.up.chat.client.Client] Message from server: go test u
+2016-03-29 18:06:50.641: [by.bsu.up.chat.client.Client] Message from server: go
+2016-03-29 18:32:12.403: [by.bsu.up.chat.client.Client] Message from server: task 3 
+2016-03-29 18:32:17.431: [by.bsu.up.chat.client.Client] Message from server: let's go
+2016-03-29 18:33:05.604: [by.bsu.up.chat.client.Client] Message from server: hello
+2016-03-29 18:41:51.208: [by.bsu.up.chat.client.Client] Message from server: azaza
+2016-03-29 18:41:54.249: [by.bsu.up.chat.client.Client] Message from server: ahahaha
+2016-03-29 18:41:57.28: [by.bsu.up.chat.client.Client] Message from server: vuhahaha
+2016-03-29 18:53:33.433: [by.bsu.up.chat.client.Client] Message from server: esf
+2016-03-29 18:53:34.436: [by.bsu.up.chat.client.Client] Message from server: sdf
+2016-03-29 18:53:35.439: [by.bsu.up.chat.client.Client] Message from server: sf
+2016-03-29 18:53:37.442: [by.bsu.up.chat.client.Client] Message from server: sdfwegtewg
+2016-03-29 18:53:39.444: [by.bsu.up.chat.client.Client] Message from server: lasyt
+2016-03-29 18:55:41.922: [by.bsu.up.chat.client.Client] Message from server: first
+2016-03-29 18:55:45.94: [by.bsu.up.chat.client.Client] Message from server: second
+2016-03-29 18:55:49.977: [by.bsu.up.chat.client.Client] Message from server: third
+2016-03-29 18:55:54.001: [by.bsu.up.chat.client.Client] Message from server: blablabla
+2016-03-29 19:05:31.198: [by.bsu.up.chat.client.Client] Message from server: Message from server!
+2016-03-29 19:07:12.271: [by.bsu.up.chat.client.Client] Message from server: Composer message
+2016-03-29 19:07:35.289: [by.bsu.up.chat.client.Client] Message from server: Composer message
+2016-03-29 19:19:09.365: [by.bsu.up.chat.client.Client] Message from server: Composer message
+2016-03-29 19:29:33.182: [by.bsu.up.chat.client.Client] Message from server: Hello bro
+2016-03-29 19:29:33.185: [by.bsu.up.chat.client.Client] Message from server: go play dota2
+2016-03-29 19:29:33.187: [by.bsu.up.chat.client.Client] Message from server: mm?
+2016-03-29 19:29:34.191: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:29:35.205: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:29:36.228: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:29:37.256: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:29:38.281: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:29:39.305: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:29:40.333: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:29:41.359: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:37:36.991: [by.bsu.up.chat.client.Client] Message from server: Hello bro
+2016-03-29 19:37:36.992: [by.bsu.up.chat.client.Client] Message from server: go play dota2
+2016-03-29 19:37:36.994: [by.bsu.up.chat.client.Client] Message from server: mm?
+2016-03-29 19:37:37.997: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:37:39.012: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:37:40.035: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:37:41.057: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:37:42.082: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:38:21.631: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:38:22.644: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:38:23.658: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:38:50.352: [by.bsu.up.chat.client.Client] Message from server: Hello bro
+2016-03-29 19:38:50.353: [by.bsu.up.chat.client.Client] Message from server: go play dota2
+2016-03-29 19:38:50.355: [by.bsu.up.chat.client.Client] Message from server: mm?
+2016-03-29 19:38:51.359: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:38:52.373: [by.bsu.up.chat.client.Client] Could not parse message
+2016-03-29 19:39:49.49: [by.bsu.up.chat.client.Client] Message from server: 1
+2016-03-29 19:39:50.494: [by.bsu.up.chat.client.Client] Message from server: 2
+2016-03-29 19:39:51.496: [by.bsu.up.chat.client.Client] Message from server: 3
+2016-03-29 19:39:52.5: [by.bsu.up.chat.client.Client] Message from server: efef
+2016-03-29 19:41:07.953: [by.bsu.up.chat.client.Client] Message from server: 2
+2016-03-29 19:41:08.954: [by.bsu.up.chat.client.Client] Message from server: gf
+2016-03-29 19:41:10.972: [by.bsu.up.chat.client.Client] Message from server: ytdf
+2016-04-03 19:47:43.756: [by.bsu.up.chat.client.Client] Message from server: Hello bro
+2016-04-03 19:47:43.759: [by.bsu.up.chat.client.Client] Message from server: go play dota2
+2016-04-03 19:47:43.761: [by.bsu.up.chat.client.Client] Message from server: mm?
+2016-04-03 19:47:44.819: [by.bsu.up.chat.client.Client] Could not parse message
+2016-04-03 19:47:45.837: [by.bsu.up.chat.client.Client] Could not parse message

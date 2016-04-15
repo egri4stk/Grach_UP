@@ -1,4 +1,0 @@
-2016-04-08 21:08:08.624: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{id=212332, author=UEWFWF, timestamp=14591693300110, text=123123123123, edit=null}
-2016-04-08 21:08:08.636: [by.bsu.up.chat.server.ServerHandler] An error occurred when dispatching request.
-2016-04-08 21:08:50.341: [by.bsu.up.chat.server.ServerHandler] Received new message from user: Message{id=212422, author=UEWFWF, timestamp=14591693300110, text=12312sdf23, edit=null}
-2016-04-08 21:08:50.346: [by.bsu.up.chat.server.ServerHandler] An error occurred when dispatching request.
