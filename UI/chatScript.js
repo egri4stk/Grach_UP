@@ -17,8 +17,11 @@ function run(){
 	var currentUser = document.getElementById('current');
    	currentUser.innerHTML = username;
    	
-   	loadHistory(); 
-   	fixScroll();		
+   	loadHistory();
+
+   	fixScroll(); 
+   //	Connect();
+ 	
 }
 function uniqueId() {
     var date = Date.now();
@@ -118,7 +121,7 @@ function showHistory(message){
 	btnCancel.addEventListener('click',function(){
 		cancelEditMessage(message);
 	});
-	fixScroll();
+	
 		
 }
 
@@ -143,20 +146,18 @@ function sendMessage() {
 	var str = inputText.value;
 	if(str != "") {
 		var newMes = newMessage(str);
-    	Application.messageList.push(newMes);
-    	fixScroll();
-    	saveMessage(newMes);
-    	inputText.value = "";
-    	fixScroll();
+		ajax('POST', Application.mainUrl, JSON.stringify(newMes), function(){
+        	
+        	Application.messageList.push(newMes);
+        	
+        	inputText.value = "";
+        	updateHistory(Application.messageList);
+        	fixScroll();
+    	});	
     }
 	
 }
-function saveMessage(newMessage) {
-    ajax('POST', Application.mainUrl, JSON.stringify(newMessage), function(){
-        updateHistory(Application.messageList);
-    });
-    fixScroll();
-}
+ 
 
 function deleteMessage(message) {
 	var thisMes = {
@@ -190,7 +191,7 @@ function changeMessage(message) {
         			text: mes
     			};
 				ajax('PUT', Application.mainUrl, JSON.stringify(thisMes), function(){
-        			loadHistory(); 
+        			 loadHistory();
 
    			 	});	
 			}
@@ -244,13 +245,14 @@ function loadHistory() {
     ajax('GET', url, null, function(responseText){
         var json = JSON.parse(responseText);
         Application.messageList = json.messages;
-        
         updateHistory(Application.messageList);
+        	
     });
     if (Application.messageList == null) {
         Application.messageList = [];
     }
 }
+
 
 
 function updateHistory(messageHistory) {
@@ -285,6 +287,8 @@ function ajax(method, url, data, continueWith) {
             }
 
             continueWith(xhr.responseText);
+            	var error = document.getElementsByClassName('warning')[0];
+   				 error.innerHTML = '';
             Application.Connected = true;
         };
 
@@ -315,3 +319,22 @@ function ServerError(){
    	var error = document.getElementsByClassName('warning')[0];
     error.innerHTML = '<img class="warning"  src="images/warning.png" alt="Error Connection">';
 }
+/*function Connect() {
+        if(Application.Connected)
+            return;
+
+        function whileConnected() {
+            Application.Connected = setTimeout(function () {
+                ajax('GET', Application.mainUrl + '?token=' + Application.token, null,function (serverResponse) {
+                    if (Application.Connected) {
+                        var json = JSON.parse(serverResponse);
+                        Application.messageList = json.messages;
+                        loadHistory();
+                        whileConnected();
+                    }
+                });
+            }, Math.round(1000));
+        }
+
+        whileConnected();
+    }*/
