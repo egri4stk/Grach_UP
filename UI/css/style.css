@@ -21,7 +21,10 @@ body{
   border-radius: 10px;
  
 }
-#warning{
+.warning{
+  height: 10%;
+  width: 10%;
+  border-radius: 10px;
   height: 3%;
   width: 3%;
 }

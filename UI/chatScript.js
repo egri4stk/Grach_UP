@@ -4,7 +4,7 @@ var Application = {
     mainUrl : 'http://localhost:8080/chat',
     messageList : [],
     token : 'TN11EN',
-    isConnected : null
+    Connected : null
 };
 function run(){
 	var appContainer = document.getElementsByClassName('all')[0];
@@ -17,7 +17,7 @@ function run(){
 	var currentUser = document.getElementById('current');
    	currentUser.innerHTML = username;
    	
-   	loadHistory() 
+   	loadHistory(); 
    	fixScroll();		
 }
 function uniqueId() {
@@ -118,6 +118,7 @@ function showHistory(message){
 	btnCancel.addEventListener('click',function(){
 		cancelEditMessage(message);
 	});
+	fixScroll();
 		
 }
 
@@ -143,15 +144,18 @@ function sendMessage() {
 	if(str != "") {
 		var newMes = newMessage(str);
     	Application.messageList.push(newMes);
+    	fixScroll();
     	saveMessage(newMes);
     	inputText.value = "";
+    	fixScroll();
     }
-	fixScroll();	
+	
 }
 function saveMessage(newMessage) {
     ajax('POST', Application.mainUrl, JSON.stringify(newMessage), function(){
         updateHistory(Application.messageList);
     });
+    fixScroll();
 }
 
 function deleteMessage(message) {
@@ -181,14 +185,18 @@ function changeMessage(message) {
    			var mes="";
    			mes = tempMes.replace(/(^\s+|\s+$)/g,'');
 			if(mes!="" && mes!=message.text){
-				message.text = mes;
-				message.edited=true;
-				updateHistory(Application.messageList);
-				
+				var thisMes = {
+        			id: message.id,
+        			text: mes
+    			};
+				ajax('PUT', Application.mainUrl, JSON.stringify(thisMes), function(){
+        			loadHistory(); 
+
+   			 	});	
 			}
 			input.hidden = true;
 			btnCancel.style.display = 'none';
-				
+			updateHistory(Application.messageList);
 		}
 	});		
 }
@@ -236,6 +244,7 @@ function loadHistory() {
     ajax('GET', url, null, function(responseText){
         var json = JSON.parse(responseText);
         Application.messageList = json.messages;
+        
         updateHistory(Application.messageList);
     });
     if (Application.messageList == null) {
@@ -249,6 +258,7 @@ function updateHistory(messageHistory) {
     for (var i = 0; i < messageHistory.length; i++) {
     	showHistory(messageHistory[i]);
     }
+
 }
 function fixScroll(){
 	var content = document.getElementById("chat")
@@ -275,7 +285,7 @@ function ajax(method, url, data, continueWith) {
             }
 
             continueWith(xhr.responseText);
-            Application.isConnected = true;
+            Application.Connected = true;
         };
 
         xhr.ontimeout = function () {
@@ -300,3 +310,8 @@ function isError(text) {
 
     return !!obj.error;
 }    
+
+function ServerError(){
+   	var error = document.getElementsByClassName('warning')[0];
+    error.innerHTML = '<img class="warning"  src="images/warning.png" alt="Error Connection">';
+}
