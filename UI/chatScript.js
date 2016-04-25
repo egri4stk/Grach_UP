@@ -1,5 +1,6 @@
 'use strict';
 var username = "";
+var stopUpdate = false;
 var Application = {
     mainUrl : 'http://localhost:8080/chat',
     messageList : [],
@@ -20,7 +21,7 @@ function run(){
    	loadHistory();
 
    	fixScroll(); 
-   //	Connect();
+   	Connect();
  	
 }
 function uniqueId() {
@@ -48,8 +49,8 @@ function showHistory(message){
 	var btnDel = document.createElement('button');
 	var btnEdit = document.createElement('button');
 	var input = document.createElement('input');
-   	var btnCancel = document.createElement('button');
-   	var delStatus = document.createElement('div');
+  var btnCancel = document.createElement('button');
+  var delStatus = document.createElement('div');
 	var editStatus = document.createElement('div');
 
 	btnDel.classList.add('del');
@@ -71,10 +72,10 @@ function showHistory(message){
 	input.setAttribute('id', 'textIn' + message.id);
 	input.setAttribute('class', 'In');
 	btnDel.setAttribute('id','del' + message.id);
-    btnEdit.setAttribute('id','red' + message.id);
-    btnCancel.setAttribute('id','cancel' + message.id);
+  btnEdit.setAttribute('id','red' + message.id);
+  btnCancel.setAttribute('id','cancel' + message.id);
     
-    divItem.appendChild(btnDel);
+  divItem.appendChild(btnDel);
 	divItem.appendChild(btnEdit);
 	divItem.appendChild(input);
 	divItem.appendChild(btnCancel);
@@ -83,9 +84,11 @@ function showHistory(message){
 	divItem.appendChild(editStatus);
 	divName.appendChild(textName);
 	divName.appendChild(time);
-	input.hidden = true;
+	
+  input.hidden = true;
 	btnCancel.style.display = 'none';
-	divBox.appendChild(divName);
+	
+  divBox.appendChild(divName);
 	divBox.appendChild(divItem);	
 	document.getElementById('list').appendChild(divBox);
 
@@ -172,6 +175,8 @@ function deleteMessage(message) {
 
 function changeMessage(message) {
 	
+  stopUpdate = true;
+
 	var input = document.getElementById('textIn' + message.id);
 	var btnCancel = document.getElementById('cancel'+message.id);
 
@@ -198,6 +203,7 @@ function changeMessage(message) {
 			input.hidden = true;
 			btnCancel.style.display = 'none';
 			updateHistory(Application.messageList);
+      stopUpdate = false;
 		}
 	});		
 }
@@ -277,19 +283,20 @@ function ajax(method, url, data, continueWith) {
                 return;
 
             if(xhr.status != 200) {
-                defaultErrorHandler('Error on the server side, response ' + xhr.status);
+               
                 return;
             }
 
             if(isError(xhr.responseText)) {
-                defaultErrorHandler('Error on the server side, response ' + xhr.responseText);
+                
                 return;
             }
 
             continueWith(xhr.responseText);
-            	var error = document.getElementsByClassName('warning')[0];
-   				 error.innerHTML = '';
+            var error = document.getElementsByClassName('warning')[0];
+   				  error.innerHTML = '';
             Application.Connected = true;
+           
         };
 
         xhr.ontimeout = function () {
@@ -319,7 +326,7 @@ function ServerError(){
    	var error = document.getElementsByClassName('warning')[0];
     error.innerHTML = '<img class="warning"  src="images/warning.png" alt="Error Connection">';
 }
-/*function Connect() {
+function Connect() {
         if(Application.Connected)
             return;
 
@@ -329,12 +336,15 @@ function ServerError(){
                     if (Application.Connected) {
                         var json = JSON.parse(serverResponse);
                         Application.messageList = json.messages;
-                        loadHistory();
+                        if(stopUpdate == false){
+                          loadHistory();
+                        }
                         whileConnected();
+                        
                     }
                 });
             }, Math.round(1000));
         }
 
         whileConnected();
-    }*/
+    }
