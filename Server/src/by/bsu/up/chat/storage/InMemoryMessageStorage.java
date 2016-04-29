@@ -50,8 +50,11 @@ public class InMemoryMessageStorage implements MessageStorage {
     public boolean updateMessage(Message message) {
         for (int i = 0; i<messages.size();i++){
             if (messages.get(i).getId().equals(message.getId())){
-                messages.get(i).setText(message.getText());
-                messages.get(i).setIsEdit(true);
+                Message temp = new Message(messages.get(i));
+                temp.setText(message.getText());
+                temp.setIsEdit(true);
+                temp.setType("edit");
+                messages.add(temp);
                 try {
                     saveMessages(messages);
                 }catch (IOException e){
@@ -67,8 +70,11 @@ public class InMemoryMessageStorage implements MessageStorage {
     public synchronized boolean removeMessage(String messageId) {
         for (int i = 0; i<messages.size(); i++){
             if (messages.get(i).getId().equals(messageId)){
-                messages.get(i).setDeleted(true);
-                messages.get(i).setText("");
+                Message temp = new Message(messages.get(i));
+                temp.setDeleted(true);
+                temp.setText("");
+                temp.setType("del");
+                messages.add(temp);
                 try {
                     saveMessages(messages);
                 }catch (IOException e){
@@ -136,7 +142,8 @@ public class InMemoryMessageStorage implements MessageStorage {
                 .add("timestamp", aHistory.getTimestamp())
                 .add("message", aHistory.getText())
                 .add("deleted",aHistory.getDeleted())
-                .add("edited",aHistory.getIsEdit()).build();
+                .add("edited",aHistory.getIsEdit())
+                .add("type",aHistory.getType()).build();
 
 
     }

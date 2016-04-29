@@ -151,6 +151,7 @@ public class MessageHelper {
     @SuppressWarnings("unchecked")
     private static JSONObject messageToJSONObject(Message message) {
         JSONObject jsonObject = new JSONObject();
+        jsonObject.put(Constants.Message.FIELD_TYPE, message.getType());
         jsonObject.put(Constants.Message.FIELD_ID, message.getId());
         jsonObject.put(Constants.Message.FIELD_AUTHOR, message.getAuthor());
         jsonObject.put(Constants.Message.FIELD_TIMESTAMP, message.getTimestamp());

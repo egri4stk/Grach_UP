@@ -1,11 +1,11 @@
 'use strict';
 var username = "";
-var stopUpdate = false;
+
 var Application = {
     mainUrl : 'http://localhost:8080/chat',
     messageList : [],
     token : 'TN11EN',
-    Connected : null
+    Connected : true
 };
 function run(){
 	var appContainer = document.getElementsByClassName('all')[0];
@@ -16,27 +16,24 @@ function run(){
 	var input = document.getElementById('nameInput');
 	input.value = username;
 	var currentUser = document.getElementById('current');
-   	currentUser.innerHTML = username;
-   	
-   	loadHistory();
-
-   	fixScroll(); 
-   	Connect();
- 	
+  currentUser.innerHTML = username;
+  fixScroll(); 	
+  loadHistory();
 }
 function uniqueId() {
     var date = Date.now();
     var random = Math.random() * Math.random();
-
-    return Math.floor(date * random).toString();;
+    return Math.floor(date * random).toString();
 }
+
 function delegateMessage(evtObj) {
 	if(evtObj.type === 'click' && evtObj.target.classList.contains('changeButton')) {
 		changeName(evtObj);
 	}
 	if( (evtObj.type === 'click' && evtObj.target.classList.contains('mesButton')) || 
 		(evtObj.type === 'keydown' && evtObj.target.classList.contains('fieldMessage') && evtObj.keyCode == 13)){
-		sendMessage(evtObj);
+		if(Application.Connected == true)
+    sendMessage(evtObj);
 	}
 }
 function showHistory(message){
@@ -123,9 +120,7 @@ function showHistory(message){
 	});
 	btnCancel.addEventListener('click',function(){
 		cancelEditMessage(message);
-	});
-	
-		
+	});			
 }
 
 function changeName() {
@@ -148,17 +143,16 @@ function sendMessage() {
 	var inputText = document.getElementById('fieldMessage');
 	var str = inputText.value;
 	if(str != "") {
-		var newMes = newMessage(str);
-		ajax('POST', Application.mainUrl, JSON.stringify(newMes), function(){
-        	
-        	Application.messageList.push(newMes);
-        	
+		
+    if(Application.Connected == true){
+      var newMes = newMessage(str);
+		  ajax('POST', Application.mainUrl, JSON.stringify(newMes), function(){
         	inputText.value = "";
-        	updateHistory(Application.messageList);
+        	loadHistory();
         	fixScroll();
     	});	
+     }
     }
-	
 }
  
 
@@ -174,9 +168,6 @@ function deleteMessage(message) {
 }
 
 function changeMessage(message) {
-	
-  stopUpdate = true;
-
 	var input = document.getElementById('textIn' + message.id);
 	var btnCancel = document.getElementById('cancel'+message.id);
 
@@ -196,28 +187,25 @@ function changeMessage(message) {
         			text: mes
     			};
 				ajax('PUT', Application.mainUrl, JSON.stringify(thisMes), function(){
-        			 loadHistory();
-
+        			 updateHistory(Application.messageList);
    			 	});	
 			}
 			input.hidden = true;
 			btnCancel.style.display = 'none';
 			updateHistory(Application.messageList);
-      stopUpdate = false;
+      
 		}
 	});		
 }
 function cancelEditMessage(message){
-  	var k = document.getElementById('divId' + message.id);
+  var k = document.getElementById('divId' + message.id);
 	var text = document.getElementById('textDiv' + message.id);
 	var input = document.getElementById('textIn' + message.id);
 	var btnCancel = document.getElementById('cancel'+ message.id);
-			input.hidden = true;
-			btnCancel.style.display = 'none';
-
+	input.hidden = true;
+	btnCancel.style.display = 'none';
 }
 function newMessage(text) {
-
     return {
         author: username,
         id: uniqueId(),
@@ -247,17 +235,39 @@ function saveUsername(name) {
 
 function loadHistory() {
     var url = Application.mainUrl + '?token=' + Application.token;
-
     ajax('GET', url, null, function(responseText){
         var json = JSON.parse(responseText);
-        Application.messageList = json.messages;
-        updateHistory(Application.messageList);
-        	
+        
+        for (var i = 0; i < json.messages.length; i++) {
+            
+            if (json.messages[i].type == "new"){
+                Application.messageList.push(json.messages[i]);
+                if(json.messages[i].author == username){
+                  updateHistory(Application.messageList);
+                  fixScroll();
+                }
+              }
+            else{ 
+                for (var k = 0; k < Application.messageList.length; k++){
+                    if (Application.messageList[k].id == json.messages[i].id)
+                        Application.messageList[k] = json.messages[i]
+                }   
+            }     
+        }
+        
+        if (Application.token != json.token) {
+            Application.token = json.token;
+            updateHistory(Application.messageList);
+          }
     });
     if (Application.messageList == null) {
         Application.messageList = [];
-    }
+    }  
 }
+setInterval(function () {
+    if (Application.Connected)
+       loadHistory();
+}, 500);
 
 
 
@@ -324,27 +334,6 @@ function isError(text) {
 
 function ServerError(){
    	var error = document.getElementsByClassName('warning')[0];
+    Application.Connected = false;
     error.innerHTML = '<img class="warning"  src="images/warning.png" alt="Error Connection">';
 }
-function Connect() {
-        if(Application.Connected)
-            return;
-
-        function whileConnected() {
-            Application.Connected = setTimeout(function () {
-                ajax('GET', Application.mainUrl + '?token=' + Application.token, null,function (serverResponse) {
-                    if (Application.Connected) {
-                        var json = JSON.parse(serverResponse);
-                        Application.messageList = json.messages;
-                        if(stopUpdate == false){
-                          loadHistory();
-                        }
-                        whileConnected();
-                        
-                    }
-                });
-            }, Math.round(1000));
-        }
-
-        whileConnected();
-    }

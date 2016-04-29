@@ -36,5 +36,6 @@ public interface Constants {
         String FIELD_TEXT = "text";
         String FIELD_IS_EDIT = "edited";
         String FIELD_IS_DELETE = "deleted";
+        String FIELD_TYPE = "type";
     }
 }

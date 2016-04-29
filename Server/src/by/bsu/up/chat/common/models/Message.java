@@ -11,6 +11,7 @@ public class Message implements Serializable {
     private String text;
     private Boolean edited;
     private Boolean deleted;
+    private String type;
 
     public Message() {
         this.id = "";
@@ -19,8 +20,17 @@ public class Message implements Serializable {
         this.text = "";
         this.edited = false;
         this.deleted = false;
+        this.type ="new";
     }
-
+    public Message(Message m){
+        this.id = m.getId();
+        this.author = m.getAuthor();
+        this.timestamp = m.getTimestamp();
+        this.text = m.getText();
+        this.edited = m.getIsEdit();
+        this.deleted = m.getDeleted();
+        this.type = m.getType();
+    }
     public Message(JsonObject temp) {
         this.author = temp.getString("author");
         this.timestamp = temp.getJsonNumber("timestamp").longValue();
@@ -28,11 +38,20 @@ public class Message implements Serializable {
         this.edited = temp.getBoolean("edited");
         this.deleted = temp.getBoolean("deleted");
         this.id = temp.getString("id");
+        this.type =temp.getString("type");
     }
 
     public Boolean getIsEdit() {
         return edited;
 
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public void setIsEdit(Boolean edit) {
