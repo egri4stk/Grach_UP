@@ -148,7 +148,7 @@ function sendMessage() {
       var newMes = newMessage(str);
 		  ajax('POST', Application.mainUrl, JSON.stringify(newMes), function(){
         	inputText.value = "";
-        	loadHistory();
+        	updateHistory(Application.messageList);
         	fixScroll();
     	});	
      }
